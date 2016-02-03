@@ -1,0 +1,39 @@
+
+<!DOCTYPE html>
+
+<html>
+	<head><link rel="stylesheet" type="text/css" href="mystyle.css"><script type="text/javascript" src="myscripts.js"></script><title>Registration</title></head>
+	<body bgcolor="lightblue">
+<!--navbar-->
+<div id='navi' class='bg'>
+<ul>
+	
+	<li class='last'><a href='#'><span>Contact</span></a></li>
+	<li><a href='Post.html'><span>Post An ad</span></a></li>
+ 	<li><a href='search.html'><span>Search For Jobs</span></a></li>
+  	<li><a href='Reg_emp.html'><span>Sign Up</span></a></li>
+		
+  	<li><a href='Login.html'><span>Log In</span></a></li>
+  	<li class='active'><a href='#'><span>Home</span></a></li>   
+	
+</ul>
+<a href='index.html'><img src='logo.jpg' class='logo'></a>
+</div>
+		<section   class="one"><br>
+		<h1>Provide the following Details and quickly signup for free!!</h1>
+                <center><pre><form  onsubmit="return checkForm(this);" method="get" action="RegisterUser"><fieldset class"one-edge-shadow">
+Employer/Company Name	<input  required type='text' name='name'maxlength="50" size="30" placeholder="enter your name"><br>
+Description		<input  type='text' name='institute' maxlength="50" size="30" placeholder="enter your Imstitute's name"> <br>
+Contact Number		<input type='number' required >
+Address
+Email Address		<input  required type="email" name='email' maxlength="50" size="30"  required placeholder="username@example.com"><br>
+Username		<input type='text' name='username' maxlength="50" size="30" placeholder="chose a username"> <br>
+Password		<input  required type='password' name='password' maxlength="50" size="30" placeholder="min. 6 characters"><br>
+Confirm Password	<input  required type='password' name='password2' maxlength="50" size="30" placeholder="re-enter the password">
+                    <input value="Submit" type="submit" class="button">		<input class="button" value="Reset!" type="reset">
+
+</center></pre>
+</fieldset></form></section>
+</body>
+</html>
+

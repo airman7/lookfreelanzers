@@ -1,0 +1,13 @@
+<web-app>  
+
+<servlet>  
+<servlet-name>mayank</servlet-name>  
+<servlet-class>Test</servlet-class>  
+</servlet>  
+
+<servlet-mapping>  
+<servlet-name>mayank</servlet-name>  
+<url-pattern>/Test</url-pattern>  
+</servlet-mapping>  
+
+</web-app>  

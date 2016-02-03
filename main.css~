@@ -1,0 +1,182 @@
+/* CSS */
+.hsContainer {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    height: 100%;
+
+    position: relative;
+    
+}
+.parallax-window {
+    min-height: 400px;
+    background: transparent;
+}
+.hsContent {
+    max-width: 450px;
+    margin: -150px auto 0 auto;
+    display: table-cell;
+    vertical-align: middle;
+    color: #ebebeb;
+    padding: 0 8%;
+    text-align: center
+}
+.bcg {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+/* Slide 1 */
+#slide-1 .bcg {background-image:url('5.jpg');}
+
+/* CSS - Slide 2 */
+#slide-2 .bcg {
+    background: none;
+    background:black;
+    height:310px;
+    text-align: center
+	
+}
+.image1{position: absolute;
+    left: 10;
+    top: 0px;
+	
+}
+
+/* CSS - Slide 3 */
+#slide-3 .bcg {background-image:url('20.jpg')}
+.one{color: black;  ;}
+/* Slide 4 */
+.curtainContainer {
+    width: 100%; height: 100%;
+    position: relative;
+}
+.curtainContainer .curtain {
+    width: 300%; height: 1px;
+    background-color: #000000;
+    position: absolute; top: 10%; left: 0;
+   
+}
+.curtainContainer .copy {
+    position: absolute;
+    bottom: 30%; left: 0;
+    width: 100%; text-align: center;
+}
+#slide-4 .bcg {background-image:url('1.jpg')}
+
+/* Slide 5 */
+#slide-5 {position: relative;}
+#slide-5 .bcg {background-image:url('15.jpg')}
+#slide-5 .bcg2 {
+    background-image:url('five.jpg');
+    position: fixed; bottom: 0; left: 0;
+    opacity: 0; z-index: 1
+}
+#slide-5 .bcg3 {
+    background: none; background-color: #010101;
+    position: fixed; bottom: 0; left: 0;
+    opacity: 0; z-index: 2
+}
+.image2{position: absolute;
+    left: 0;
+    top: 0px;
+	
+}
+
+@import url(http://fonts.googleapis.com/css?family=Capriola);
+#navi,
+#navi ul,
+#navi ul li,
+#navi ul li a {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  list-style: none;
+  line-height: 1;
+  display: block;
+  position: relative;
+  font-family: Capriola, Helvetica, sans-serif;
+}
+
+li:hover ul {
+    display: block;
+}
+
+
+ul ul {
+    position: absolute;
+    display: none;
+}
+
+.bg{
+background:#222222;
+}
+#navi {
+  width: auto;
+  height: 59px;
+  padding-bottom: 4px;
+}
+#navi.align-left {
+  float: left;
+}
+#navi.align-left ul li {
+  float: rleft;
+  margin-right: 0;
+  margin-left: 4px;
+}
+#navi.align-left ul li:first-child,
+#navi.align-left ul li:first-child > a {
+  border-bottom-right-radius: 3px;
+}
+
+#navi ul {
+  height: 59px;
+}
+#navi ul li {
+  float: right;
+  margin-right: 4px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  z-index: 5;
+}
+#navi ul li a {
+  padding: 24px 30px 20px 30px;
+  margin-bottom: 4px;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+#navi ul li:first-child,
+#navi ul li:first-child > a {
+  border-bottom-left-radius: 3px;
+}
+.logo{
+ position: absolute;
+    left: 0;
+    top: 2px;
+	height:59px;
+	width:300px;
+}
+
+#navi ul li:hover,
+#navi ul li.active {
+  background: #0f71ba;
+  background: -moz-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #3fa4f0), color-stop(100%, #0f71ba));
+  background: -webkit-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: -o-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: -ms-linear-gradient(top, #3fa4f0 0%, #0f71ba 100%);
+  background: linear-gradient(to bottom, #3fa4f0 0%, #0f71ba 100%);
+}
+#navi ul li a:hover,
+#navi ul li.active > a {
+  background: url('images/bg.png');
+  color: #ffffff;
+}
+
+

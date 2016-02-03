@@ -1,0 +1,13 @@
+<web-app>  
+
+<servlet>  
+<servlet-name>RegisterEmp</servlet-name>  
+<servlet-class>RegisterEmp</servlet-class>  
+</servlet>  
+
+<servlet-mapping>  
+<servlet-name>RegisterEmp</servlet-name>  
+<url-pattern>/RegisterEmp</url-pattern>  
+</servlet-mapping>  
+
+</web-app>  
