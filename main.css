@@ -12,6 +12,19 @@
     min-height: 400px;
     background: transparent;
 }
+.one{
+  text-align: center;
+}
+.form{
+  text-align: justify;
+}
+.button{
+  border-radius: 10px;
+  background: #0f71ba;
+  height: 35px;
+  width:100px;
+
+}
 body{
   text-align: center;
   /*font-family:Berlin Sans FB Demi*/
@@ -25,6 +38,11 @@ body{
     padding: 0 8%;
     text-align: center
 }
+.loginbutton{
+    background-image: url('images/login.png');
+    background-position: center;
+}
+
 .bcg {
     background-position: center center;
     background-repeat: no-repeat;

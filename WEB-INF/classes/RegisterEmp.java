@@ -5,10 +5,10 @@ import Connection.Conn;
 import java.sql.*;
 public class RegisterEmp extends HttpServlet
 {
-	public void doGet(HttpServletRequest request,HttpServletResponse response)  throws ServletException,IOException  
-	{  
-		response.setContentType("text/html");//setting the content type  
-		  
+	public void doGet(HttpServletRequest request,HttpServletResponse response)  throws ServletException,IOException
+	{
+		response.setContentType("text/html");//setting the content type
+
 		//RegisterEmp?name=&email=&description=&username=&password=&password2=
         PrintWriter out = response.getWriter();
         Connection con=Conn.getCon();
@@ -23,7 +23,7 @@ public class RegisterEmp extends HttpServlet
 		String email=request.getParameter("email");
         if(uid!=null)
         {
-        try 
+        try
         {
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1,ename);
@@ -35,29 +35,30 @@ public class RegisterEmp extends HttpServlet
 					ps.setString(7,email);
                     ps.executeUpdate();
                     con.close();
-                    
+
                     out.println("<html>");
-                        out.println("<head>");
-                                out.println("<link rel=\"stylesheet\" type=\"text/css\" href=\"mystyle.css\"><script type=\"text/javascript\" src=\"myscripts.js\"></script><title> Congratulations!!</title>");
-                        out.println("</head>");
-                        out.println("<body bgcolor=\"lightblue\" >");
-                            out.println("<p style=\"font-family:calibri font-size:30\">");
-                         out.println("<nav><img class=\"logo\" src=\"t9.png\" align=\"left\" size=\"20px\"><a href=\"index.jsp\" class=\"navbar\" >TIMETABLE</a></nav>	");
-                            out.println("<br><br><br>");
-                            out.println("<center><h1>Congratulations!!!<br><center><br><br>");
-                            out.println("You have successfully registered yourself.<br>Now get started!!</h1><br><br>");
-                            
-                   //                  HttpSession ses=request.getSession();
-                   // ses.setAttribute("user",uname);
-                   // ses.setAttribute("userid",uid);
-                   // ses.setAttribute("institute",institute);
-                   // out.println("<a href=\"enterdetails.jsp\" class=\"button\">CONTINUE</a></pre>");
-                   
-                        out.println("</body></html>");
-                    
-                    //response.sendRedirect("index.html");
-                } 
-                catch (SQLException ex) 
+                    out.println("<head>");
+                    out.println("<title> Congratulations!!</title>");
+                    out.println("</head>");
+                    out.println("<body>");
+                    out.println("<p style=\"font-family:calibri font-size:30\">");
+                    out.println("<center><h1>Congratulations!!!<br><center><br><br>");
+                    out.println("You have successfully registered yourself.<br>Now get started!!</h1><br><br>");
+                    out.println("<a href=\"index.html\">Go to Home</a><br><br>");
+					out.println("<a href=\"Login.html\">Go to Login</a>");
+
+                    /*
+					HttpSession ses=request.getSession();
+                    ses.setAttribute("user",uname);
+                    ses.setAttribute("userid",uid);
+                    ses.setAttribute("institute",institute);
+                    out.println("<a href=\"enterdetails.jsp\" class=\"button\">CONTINUE</a></pre>");
+                    */
+
+					out.println("</body></html>");
+
+                }
+                catch (SQLException ex)
                 {
                     out.println("ERROR");
                 }

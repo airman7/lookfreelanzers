@@ -1,13 +1,32 @@
-<web-app>  
+<web-app>
 
-<servlet>  
-<servlet-name>RegisterEmp</servlet-name>  
-<servlet-class>RegisterEmp</servlet-class>  
-</servlet>  
+<servlet>
+<servlet-name>RegisterEmp</servlet-name>
+<servlet-class>RegisterEmp</servlet-class>
+</servlet>
 
-<servlet-mapping>  
-<servlet-name>RegisterEmp</servlet-name>  
-<url-pattern>/RegisterEmp</url-pattern>  
-</servlet-mapping>  
+<servlet-mapping>
+<servlet-name>RegisterEmp</servlet-name>
+<url-pattern>/RegisterEmp</url-pattern>
+</servlet-mapping>
 
-</web-app>  
+<servlet>
+<servlet-name>SigninEmp</servlet-name>
+<servlet-class>SigninEmp</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>SigninEmp</servlet-name>
+<url-pattern>/SigninEmp</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>SearchResult</servlet-name>
+<servlet-class>SearchResult</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>SearchResult</servlet-name>
+<url-pattern>/SearchResult</url-pattern>  
+</servlet-mapping>
+</web-app>

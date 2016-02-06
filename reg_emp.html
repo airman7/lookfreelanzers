@@ -3,7 +3,7 @@
 
 <html>
 	<head><link rel="stylesheet" type="text/css" href="main.css"><script type="text/javascript" src="myscripts.js"></script><title>Registration</title></head>
-	<body style="text-align:center;">
+	<body style="text-align:center;" bgcolor="orange">
 <!--navbar-->
 <div id='navi' class='bg'>
 <ul>
@@ -11,7 +11,7 @@
 	<li class='last'><a href='#'><span>Contact</span></a></li>
 	<li><a href='Post.html'><span>Post An ad</span></a></li>
  	<li><a href='search.html'><span>Search For Jobs</span></a></li>
-  	<li class='active'><a href='Reg_emp.html'><span>Sign Up</span></a></li>
+  	<li class='active'><a href='reg_emp.html'><span>Sign Up</span></a></li>
 
   	<li><a href='Login.html'><span>Log In</span></a></li>
   	<li ><a href='index.html'><span>Home</span></a></li>
@@ -19,21 +19,21 @@
 </ul>
 <a href='index.html'><img src='images/logo.jpg' class='logo'></a>
 </div>
-		<section   class="one"><br>
-		<h1>Provide the following Details and quickly signup for free!!</h1>
-                <pre><form  onsubmit="return checkForm(this);" method="get" action="RegisterEmp"><fieldset class"one-edge-shadow">
-Employer/Company Name					<input  required type='text' name='name' maxlength="50" size="30" placeholder="enter your name"><br>
-Contact Number								<input type='text' name="contact" maxlength="12" required >
-Address												<input type='text' name="add" maxlength="100" required >
-Email Address									<input  required type="email" name='email' maxlength="50" size="30"  required placeholder="username@example.com"><br>
-Description<input  type='text' name='description' maxlength="50" size="30" placeholder="Describe your institute"> <br>
-Username<input type='text' name='username' maxlength="50" size="30" placeholder="chose a username"> <br>
-Password<input  required type='password' name='password' maxlength="50" size="30" placeholder="min. 6 characters"><br>
-Confirm Password<input  required type='password' name='password2' maxlength="50" size="30" placeholder="re-enter the password">
-            <input value="Submit" type="submit" class="button">		<input class="button" value="Reset!" type="reset">
 
-</pre>
-</fieldset></form></section>
+
+	<pre>	<p style="font-size:200%; font-family:Century Gothic; color:Blue;" > Sign Up</p>
+		<form style="font-family:Berlin Sans FB;font-size:150%;" method='get' action='RegisterEmp'>
+<label>Employer/Company Name</label>	<input  required type='text' name='name' maxlength="50" size="30" placeholder="enter your name">
+<label>Contact Number</label>			<input type='text' name="contact" maxlength="12" required	size="30">
+<label>Address   	</label>				<input type='text' name="add" maxlength="100" required	size="30"		 >
+<label>Email Address         </label>		<input  required type="email" name='email' maxlength="50" size="30"  required placeholder="username@example.com">
+<label>Description        </label>			<input  type='text' name='description' maxlength="50" size="30" placeholder="Describe your institute">
+<label>Username	     	             </label>	<input type='text' name='username' maxlength="50" size="30" placeholder="chose a username">
+<label>Password       	           	</label>	<input  required type='password' name='password' maxlength="50" size="30" placeholder="min. 6 characters">
+<label>Confirm Password	      	</label>	<input  required type='password' name='password2' maxlength="50" size="30" placeholder="re-enter the password">
+          <br><br>  <input value="Submit" type="submit" class="button">		<input class="button" value="Reset!" type="reset">
+</form>
+</fieldset></form>
 <pre style="font-size:100%;">As you create the account you agree to
 the Terms and Conditions of the organisation.</pre>
 
