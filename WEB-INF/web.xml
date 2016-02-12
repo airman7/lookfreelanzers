@@ -27,6 +27,26 @@
 
 <servlet-mapping>
 <servlet-name>SearchResult</servlet-name>
-<url-pattern>/SearchResult</url-pattern>  
+<url-pattern>/SearchResult</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>postAd</servlet-name>
+<servlet-class>postAd</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>postAd</servlet-name>
+<url-pattern>/postAd</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>SearchAds</servlet-name>
+<servlet-class>SearchAds</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>SearchAds</servlet-name>
+<url-pattern>/SearchAds</url-pattern>  
 </servlet-mapping>
 </web-app>

@@ -29,7 +29,7 @@ public class SearchResult extends HttpServlet{
         try{
             String search=request.getParameter("search");
             String where=request.getParameter("searchin");
-            if(where=="job")
+            if(where.equals("job"))
                 ps = con.prepareStatement(query1);
             else
                 ps=con.prepareStatement(query2);
