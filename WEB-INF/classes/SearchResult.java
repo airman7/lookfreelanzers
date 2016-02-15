@@ -23,22 +23,56 @@ public class SearchResult extends HttpServlet{
 
         Connection con = Conn.getCon();
         String query1 = "select * from resource where name=?";
-        String query2 = "select * from resource where field=?";
+        String query2 = "select * from resource where name=? & field=?";
+        String query= "select * from resource where field=?";
+        String query3 = "select * from resources";
         ResultSet rs;
         PreparedStatement ps;
+        //SearchResult?search=&searchin=
+
         try{
-            String search=request.getParameter("search");
-            String where=request.getParameter("searchin");
-            if(where.equals("job"))
-                ps = con.prepareStatement(query1);
-            else
-                ps=con.prepareStatement(query2);
-            ps.setString(1,search);
-            rs=ps.executeQuery();
-            if(rs.next())
+            String search="";
+            search=search.concat(request.getParameter("search"));
+            String where="";
+            where=where.concat(request.getParameter("searchin"));
+            out.println(search);
+            out.println(where);
+
+            if(search.equals("") && where.equals("No Particular Field"))
             {
-                out.println("");
+              ps  = con.prepareStatement(query3);
             }
+            else
+            {
+              if(where.equals("No Particular Field"))
+              {
+                  ps = con.prepareStatement(query1);
+                  ps.setString(1,search);
+              }
+              else
+              {
+                if(search.equals(""))
+                {
+                    ps=con.prepareStatement(query);
+                    ps.setString(1,where);
+                }
+                else
+                {
+                    ps=con.prepareStatement(query2);
+                    ps.setString(1,search);
+                    ps.setString(2,where);
+                }
+              }
+            }
+            rs=ps.executeQuery();
+            int count=0;
+            while (rs.next())
+              ++count;
+            if(rs.first())
+              for(int i =0;i<count;i++)
+              {
+                  out.println("<h4>"+rs.getString("rname")+"</h4>");
+              }
             else
             {
                 out.println("<h4>no result matches your search</h4>");
@@ -46,6 +80,7 @@ public class SearchResult extends HttpServlet{
         }catch(Exception e)
         {
             out.println("Error fetching data. Please try again");
+            out.println(e.printStackTrace());
         }
         out.println("</body></html>");
     }

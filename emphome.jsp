@@ -37,12 +37,31 @@
         <title>User Home</title>
     </head>
     <body>
-      <input id="search" type="text" name="search"><br>
-      <select name="searchin" >
-          <option value="job">By Jobs</option>
-          <option value="name">By Name</option>
-      </select><br>
-      <input type="button" onclick="SearchResult" value="submit">
+      <form action="SearchResult" method="get">
+
+    <!--
+    Search can be done in 3 ways:
+    1. just give a search field and then write backend to check
+    all  the resources and job category for matches
+    2.provide two search fields: one to search by name
+    one to search by job(drop down for job)eesy peesy
+    3.provide 2 non mandatory fields, one specifying job type
+    and other for name
+    -->
+      <form>
+        <input id="search" type="text" name="search"><br>
+        <select name="searchin">
+        <%
+          for(int i=0;i<count;i++)
+          {
+        %>
+        <option value="<%= field[i] %>"><%= field[i] %></option>
+        <%
+          }
+        %>
+        </select>
+        <input type="submit" value="Submit">
+      </form>
       <br><hr>
       <pre>
         <form method="get" action="postAd">
