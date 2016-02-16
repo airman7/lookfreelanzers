@@ -47,6 +47,16 @@
 
 <servlet-mapping>
 <servlet-name>SearchAds</servlet-name>
-<url-pattern>/SearchAds</url-pattern>  
+<url-pattern>/SearchAds</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ApplyForAd</servlet-name>
+<servlet-class>ApplyForAd</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>ApplyForAd</servlet-name>
+<url-pattern>/ApplyForAd</url-pattern>  
 </servlet-mapping>
 </web-app>

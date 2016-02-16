@@ -48,7 +48,11 @@ public class SearchAds extends HttpServlet{
             {
               do
               {
-                  out.println(rs.getString("description"));
+                  out.println("<br>"+rs.getString("description")+"<br>");
+                  out.println("<form action=\"ApplyForAd\">");
+                  out.println("<input type=\"hidden\" name=\"adid\" value=\""+rs.getString("adid")+"\" />");
+                  out.println("<input type=\"submit\" value=\"Apply\">");
+                  out.println("</form>");
               }while(rs.next());
             }
             else

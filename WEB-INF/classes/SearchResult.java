@@ -22,10 +22,10 @@ public class SearchResult extends HttpServlet{
         out.println("</head><body>");
 
         Connection con = Conn.getCon();
-        String query1 = "select * from resource where name=?";
-        String query2 = "select * from resource where name=? & field=?";
-        String query= "select * from resource where field=?";
-        String query3 = "select * from resources";
+        String query1 = "select * from resource where rname=?";
+        String query2 = "select * from resource where rname=? & `work field`=?";
+        String query= "select * from resource where `work field`=?";
+        String query3 = "select * from resource";
         ResultSet rs;
         PreparedStatement ps;
         //SearchResult?search=&searchin=
@@ -35,8 +35,8 @@ public class SearchResult extends HttpServlet{
             search=search.concat(request.getParameter("search"));
             String where="";
             where=where.concat(request.getParameter("searchin"));
-            out.println(search);
-            out.println(where);
+            //out.println(search);
+            //out.println(where);
 
             if(search.equals("") && where.equals("No Particular Field"))
             {
@@ -64,6 +64,8 @@ public class SearchResult extends HttpServlet{
                 }
               }
             }
+            out.println("chekpoint");
+
             rs=ps.executeQuery();
             int count=0;
             while (rs.next())
@@ -72,6 +74,7 @@ public class SearchResult extends HttpServlet{
               for(int i =0;i<count;i++)
               {
                   out.println("<h4>"+rs.getString("rname")+"</h4>");
+                  rs.next();
               }
             else
             {
@@ -80,7 +83,8 @@ public class SearchResult extends HttpServlet{
         }catch(Exception e)
         {
             out.println("Error fetching data. Please try again");
-            out.println(e.printStackTrace());
+            //e.printStackTrace(out);
+
         }
         out.println("</body></html>");
     }
