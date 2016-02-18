@@ -79,6 +79,7 @@
           </select>
           <input type="submit" value="Submit">
         </form>
-      </pre>
+      </pre><br><br>
+      <a href="ShowMyAds">View your ads</a>
     </body>
 </html>

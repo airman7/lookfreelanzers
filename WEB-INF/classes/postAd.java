@@ -31,10 +31,9 @@ public class postAd extends HttpServlet{
 
     try{
 
-    //  HttpSession ses=request.getSession();
+      HttpSession ses=request.getSession();
       ps=con.prepareStatement(query);
-    //  ps.setInt(1,(Integer)ses.getAttribute("id"));
-      ps.setInt(1,1); //ayu
+      ps.setInt(1,(int)ses.getAttribute("eid"));
       ps.setInt(2,Integer.parseInt(request.getParameter("field")));
       ps.setString(3,request.getParameter("desc"));
       ps.setInt(4,Integer.parseInt(request.getParameter("requirement")));

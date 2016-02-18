@@ -11,13 +11,13 @@
 </servlet-mapping>
 
 <servlet>
-<servlet-name>SigninEmp</servlet-name>
-<servlet-class>SigninEmp</servlet-class>
+<servlet-name>Signin</servlet-name>
+<servlet-class>Signin</servlet-class>
 </servlet>
 
 <servlet-mapping>
-<servlet-name>SigninEmp</servlet-name>
-<url-pattern>/SigninEmp</url-pattern>
+<servlet-name>Signin</servlet-name>
+<url-pattern>/Signin</url-pattern>
 </servlet-mapping>
 
 <servlet>
@@ -57,6 +57,16 @@
 
 <servlet-mapping>
 <servlet-name>ApplyForAd</servlet-name>
-<url-pattern>/ApplyForAd</url-pattern>  
+<url-pattern>/ApplyForAd</url-pattern>
+</servlet-mapping>
+
+<servlet>
+<servlet-name>ShowMyAds</servlet-name>
+<servlet-class>ShowMyAds</servlet-class>
+</servlet>
+
+<servlet-mapping>
+<servlet-name>ShowMyAds</servlet-name>
+<url-pattern>/ShowMyAds</url-pattern>
 </servlet-mapping>
 </web-app>
