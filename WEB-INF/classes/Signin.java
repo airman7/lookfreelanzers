@@ -1,5 +1,4 @@
 import javax.servlet.ServletException;
-//import java.servlet.*;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -31,7 +30,7 @@ public class Signin extends HttpServlet{
         out.println("<html><body>");
         try{
             String usertype=req.getParameter("type");
-            if(usertype.equals("Employer"))
+            if(usertype.equals("employer"))
               pres=con.prepareStatement(query);
             else
               pres=con.prepareStatement(query2);
@@ -41,7 +40,7 @@ public class Signin extends HttpServlet{
             rs=pres.executeQuery();
             if(rs.next())
             {
-              if(usertype.equals("Employer"))
+              if(usertype.equals("employer"))
               {
                 ses.setAttribute("ename",rs.getString("ename"));
                 ses.setAttribute("eid",rs.getString("eid"));

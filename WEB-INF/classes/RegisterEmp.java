@@ -31,8 +31,8 @@ public class RegisterEmp extends HttpServlet
                     ps.setString(3,password);
                     ps.setString(4,address);
                     ps.setString(5,contact);
-					ps.setString(6,description);
-					ps.setString(7,email);
+					ps.setString(6,email);
+					ps.setString(7,description);
                     ps.executeUpdate();
                     con.close();
 

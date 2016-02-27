@@ -15,20 +15,21 @@ public class ShowMyAds extends HttpServlet{
     public void doGet(HttpServletRequest request,HttpServletResponse response) throws IOException,ServletException{
 
         //set the content type
-        response.setContentType("text/html");
+        response.setContentType("text/plain");
+        response.setCharacterEncoding("UTF-8");
         //outputstream
-        PrintWriter out = response.getWriter();
-
-        out.println("<html><head>");
-        out.println("<title>Search results</title>");
-        out.println("</head><body>");
+      //  PrintWriter out = response.getWriter();
 
         Connection con = Conn.getCon();
         String get="select * from applied_ads where eid=?";
         String getr="select * from applied_ads where rid=?";
+        String getname="select ename from employer where eid=?";
+        String getname2="select rname from resource where rid=?";
         //adid,eid,rid (take rid from session)
         ResultSet rs;
-        PreparedStatement ps;
+        PreparedStatement ps,ps2;
+        String name;
+        StringBuffer send=null;
 
         try{
           HttpSession session=request.getSession();
@@ -37,29 +38,39 @@ public class ShowMyAds extends HttpServlet{
           {
             id= (String) session.getAttribute("eid");
             ps=con.prepareStatement(get);
+            ps2=con.prepareStatement(getname);
+            ps2.setInt(1,Integer.parseInt(id));
+            rs=ps2.executeQuery();
+            rs.first();
+            name=rs.getString("ename");
           }
           else
           {
               ps=con.prepareStatement(getr);
+              ps2=con.prepareStatement(getname2);
+              ps2.setInt(1,Integer.parseInt(id));
+              rs=ps2.executeQuery();
+              rs.first();
+              name=rs.getString("rname");
+
           }
 
           ps.setInt(1,Integer.parseInt(id));
           rs=ps.executeQuery();
+
           while(rs.next())
           {
-            out.print("<div>");
-            out.print("<h3>Ad Number:"+rs.getString("adid")+"</h3>");
-            out.print("<h3>Applicant id:"+rs.getString("rid")+"</h3>");
-            //make sql query to count of appplicants..and also get ad info
-            //and appplicant info from respective pages
-            out.print("</div>");
+            send=new StringBuffer("{\"adid\":\"");
+            send.append(rs.getString("adid")+"\",");
+            send.append("\"id\":\""+rs.getString("rid")+"\",");
+            send.append("\"name\":\""+name+"\"}");
+            response.getWriter().write(send.toString());
           }
         }catch(Exception e)
         {
-            out.println("<h3>Error fetching data. Please try again<h3>");
-            e.printStackTrace(out);
+            //out.println("<h3>Error fetching data. Please try again<h3>");
+            //e.printStackTrace(out);
         }
-        out.println("<br><a href=\"emphome.jsp\">Go to Home</a>");
-        out.println("</body></html>");
+
     }
 }
