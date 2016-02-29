@@ -41,39 +41,46 @@
     <body>
       <div class='searchbar'>
           <img class='logo' src='images/logo.jpg'>
-            <input class='input1' id="search" type="text" name="search">
-            <select class='input2' name="searchin" id="searchin">
-              <option value="groot">groot</option>
-            </select>
-            <img id='search2' src='search.jpg'>
-            <img src='images/pic' id="profile.JPG">
+          <input class='input1' id="search" type="text">
+          <select class='input1' id="searchin">
+          <%
+            for(int i=0;i<count;i++)
+            {
+          %>
+              <option value="<%= field[i] %>"><%= field[i] %></option>
+          <%
+            }
+          %>
+          </select>
+    <!--        <input id="search" type="text" name="search"><br>
+            <select name="searchin" id="searchin">
+    -->
+          <img id='search2' src='images/search.jpg' onclick="ajaxsearch()">
+            <img src='images/pic.JPG' id="profile">
           <img src='images/menu.png' id="menuButton">
-        <label id='name'> </label>
+        <label id='name'><%= (String)session.getAttribute("ename")%></label>
       </div><br>
       <div id='leftMenu'>
         <div class='content'>
-          <a class='button' type="button" id="menu_button">Posts</a><br><br>
+          <a class='button' type="button" id="menu_button">Ads</a><br><br>
           <ul type="none" class='menu' id="menu">
               <li class="submenu" id="post">Post New Ad</li>
               <li class="submenu" id="viewad"  onclick="main()">View Ads</li>
           </ul>
-          <a class='button' type="button" id="menu_button2">Change Details</a><br><br>
+          <a class='button' type="button" id="menu_button2">Change</a><br><br>
           <ul type="none" id="menu2" class='menu'>
-              <li class="submenu" id="personal">Personal</li>
-              <li class="submenu" id="work">Work</li>
+              <li class="submenu" id="personal">Details</li>
           </ul>
-          <a class='button' type="button" id="menu_button3">View profile</a><br><br>
-          <ul type="none" id="menu3" class='menu'>
-              <li class="submenu"><a>Resource</a></li>
-              <li class="submenu"><a>Employer</a></li>
-          </ul>
+          <!--a class='button' type="button" id="menu_button3">View profile</a><br><br>
           <a class='button' type="button" href='index.html' id="menu_button5">About Us</a><br><br>
           <a class='button' type="button" href='index.html' id="menu_button6">Feedback</a><br><br>
-          <a class='button' type="button" href='index.html' id="menu_button7">Home</a><br><br>
+          <a class='button' type="button" href='index.html' id="menu_button7">Home</a><br><br-->
         </div>
       </div>
 
+
       <div class='container2'>
+
         <span id="personalform">
             <form style="font-family:'monotype corosiva';font-size:100%;" method='post'><br>
               <label>Employer/company Name</label><input  required type='text' name='name' maxlength="50" size="30" placeholder="enter your name"><br><br>
@@ -85,38 +92,71 @@
             </form>
           </span>
 
-      <span  id="postad">
-        <h1>Post New Add</h1>
-       <form style="font-family:Berlin Sans FB;font-size:100%;" method="get" action="postAd" >
-         <br><label>Name</label><input required type="text" name="name1"><br><br>
-       <label>  Work field </label><select name="field">
-         <%
-           for(int i=0;i<count;i++)
-           {
-         %>
-         <option value="<%= id[i] %>"><%= field[i] %></option>
-         <%
-           }
-         %>
-       </select><br><br>
-       <label>StartDate(unnecessary:/)</label> <input required type="date" name="startdate"><br><br>
-       <label>To be Submitted by</label> <input type="date" /><br><br>
-       <label>Description</label> <textarea  clrequired size="2000" name="desc" type="text"></textarea><br><br><br><br><br>
-         <input class='submit' type="submit" value="Submit">
-       </form>
-     </span>
+          <span  id="postad">
+            <h1>Post New Add</h1>
+            <form style="font-family:Berlin Sans FB;font-size:100%;" method="post" action="postAd" >
+            <br><label>Title</label><input required type="text" name="title"/><br><br>
+            <label>  Work field </label><select name="field">
+             <%
+               for(int i=0;i<count;i++)
+               {
+             %>
+             <option value="<%= id[i] %>"><%= field[i] %></option>
+             <%
+               }
+             %>
+           </select><br><br>
+           <label>StartDate</label> <input type="date" name="sdate"/><br><br>
+           <label>End Date</label> <input type="date" name="edate"/><br><br>
+           <label>Description</label> <textarea  required size="2000" name="desc" type="text"></textarea><br><br><br><br><br>
+           <input class='submit' type="submit" value="Submit"/>
+           </form>
+         </span>
 
-     <div id='viewads'>
+           <span  id="changepassword">
+             <h1>Change Password</h1>
+             <form style="font-family:Berlin Sans FB;font-size:100%;" method="post" action="ChangePassword" >
+             <br><label>Old Password</label><input required type="password" name="oldpassword"><br><br>
+             <br><label>New Password</label><input required type="password" name="newpassword"><br><br>
+             <br><label>Confirm Password</label><input required type="password" name="newpassword2"><br><br>
+            <input class='submit' type="submit" value="Submit">
+            </form>
+         </span>
+
+
+<!--ad template-->
+        <div id='viewads'>
+         <div id='ad'>
+           <div id="adname" class='Name'>
+             <hr>
+           </div>
+           <div class='details'>
+            <div id="addesc" class='description'>
+
+            </div><hr>
+            <div class='item'>
+             <div class='left'>
+               left
+             </div>
+             <div class='right'>
+               right
+             </div>
+           </div>
+          </div>
+         </div>
+       </div>
+<!--ad template-->
+
+          </div>
+
+     <div id='rightmenu'>
+       <ul type='none'>
+           <li class="submenu2"><a href="Logout">Logout</a></li>
+           <li class="submenu2" onclick="hideall()"><a>Home</a></li>
+           <li class='submenu2' id="ChangePassword"><a>Change Password </a><li>
+           <li class='submenu2'><a>Complaint</a><li>
+       </ul>
      </div>
-   </div>
-
-      <div id='rightmenu'>
-        <ul type='none'>
-            <li class="submenu2"><a>Logout</a></li>
-            <li class="submenu2"><a>Home</a></li>
-            <li class='submenu2'><a>View profile</a><li>
-        </ul>
-      </div>
 
       <script type="text/javascript" src="js/jquery.js"></script>
       <script type="text/javascript" src="js/j.js"></script>

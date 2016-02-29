@@ -1,6 +1,5 @@
 $(document).ready(function() {
-  $('#name').text('Krutika');
-  $("#menu_button").click(function(){
+$("#menu_button").click(function(){
     $("#menu").toggle(1000);
     $("#menu2").hide(1000);
     $("#menu3").hide(1000);
@@ -19,6 +18,7 @@ $(document).ready(function() {
     $('#rightmenu').toggle(1000);
   });
 
+
   $('#personal').click(function(){
     hideall();
     $('#personalform').toggle(1000);
@@ -29,6 +29,11 @@ $(document).ready(function() {
     $('#postad').toggle(1000);
   });
 
+  $('#ChangePassword').click(function(){
+    hideall();
+    $('#changepassword').toggle(1000);
+  });
+  
   $('#search2').click(function(){
     $('#searchresults').toggle();
   });
@@ -37,9 +42,11 @@ $(document).ready(function() {
 
 function hideall()
 {
-  $("#personalform").hide(1000);
-  $("#postad").hide(1000);
-  $("#viewads").hide(1000);
+
+  $("#personalform").hide();
+  $("#postad").hide();
+  $("#viewads").hide();
+  $("#changepassword").hide();
 }
 function checkForm(form)
 {

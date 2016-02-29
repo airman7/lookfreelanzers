@@ -18,7 +18,7 @@ public class ShowMyAds extends HttpServlet{
         response.setContentType("text/plain");
         response.setCharacterEncoding("UTF-8");
         //outputstream
-      //  PrintWriter out = response.getWriter();
+        PrintWriter out = response.getWriter();
 
         Connection con = Conn.getCon();
         String get="select * from applied_ads where eid=?";
@@ -28,9 +28,8 @@ public class ShowMyAds extends HttpServlet{
         //adid,eid,rid (take rid from session)
         ResultSet rs;
         PreparedStatement ps,ps2;
-        String name;
         StringBuffer send=null;
-
+        String name;
         try{
           HttpSession session=request.getSession();
           String id= (String) session.getAttribute("rid");
@@ -58,19 +57,23 @@ public class ShowMyAds extends HttpServlet{
           ps.setInt(1,Integer.parseInt(id));
           rs=ps.executeQuery();
 
+          send = new StringBuffer("{\"ad\":[");
           while(rs.next())
           {
-            send=new StringBuffer("{\"adid\":\"");
-            send.append(rs.getString("adid")+"\",");
-            send.append("\"id\":\""+rs.getString("rid")+"\",");
+            send.append("{\"adid\":\""+rs.getString("adid")+"\",");
             send.append("\"name\":\""+name+"\"}");
-            response.getWriter().write(send.toString());
+            if(rs.next())
+            {
+              send.append(",");
+              rs.previous();
+            }
           }
+            send.append("]}");
+            out.write(send.toString());
         }catch(Exception e)
         {
             //out.println("<h3>Error fetching data. Please try again<h3>");
-            //e.printStackTrace(out);
+            e.printStackTrace(out);
         }
-
     }
 }

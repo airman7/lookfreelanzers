@@ -1,22 +1,20 @@
 #search2{
-  height:40px;  width:50px;  float:left; margin-left:20px; margin-top:5px;
+  height:40px;  width:50px;  float:left; margin-left:20px; margin-top:5px; position:relative;
+    display:inline-block;
 }
 .input1{
-  height:40px;  width:200px; font-family:purisa; font-size:20px; float:left; position:relative;
-  border-width: 3px; background-color: #cccccc; border-color:#0d0d0d; border-radius:5px; margin-top:5px;
+  height:40px;  width:200px; font-family:purisa; font-size:20px; float:left;position:relative;
+  border-width: 3px; vertical-align: top;
+    display:inline-block;  background-color: #cccccc; border-color:#0d0d0d; border-radius:5px; margin:5px;
 }
-
-.input2{
-    height:40px;  width:200px; font-family:purisa; font-size:20px; 
-    float:left; position:relative;
-    border-width: 3px; background-color: #cccccc; border-color:#0d0d0d;
-     border-radius:5px; margin-top:5px;
-  }
-  .logo{
-  float:left;  height:40px;  width:200px;  padding-right: 10px; margin-top:5px; margin-left:5px;
+#search2:hover{
+  cursor:pointer;
+}
+.logo{
+float:left;  height:40px;  width:200px;  padding-right: 10px; margin-top:5px; margin-left:5px;
 }
 .searchbar{
-  width: 98%;   height: 50px;  opacity: 0.8; box-shadow: 10px 10px 5px #888888; position:fixed; background-color: white;
+  width: 98%;   height: 50px; z-index: 3;; box-shadow: 10px 10px 5px #888888;  position:fixed; background-color: white;
 }
 #name{
   float:right; font-family: 'purisa'; margin-right:20px; font-size:30px; margin-top:5px;
@@ -31,8 +29,9 @@
   cursor:pointer;
 }
 body{
-  background: url('images/bg.jpg'); background-repeat: none;
+/*  background: url('images/bg.jpg'); background-repeat: none;*/
 }
+
 #leftMenu{
   float:left; width:200px;
 }
@@ -40,7 +39,8 @@ body{
     position:absolute; top:50px; width:200px; margin:10px; border:black 2px; margin-top:80px;
 }
 .container2{
-  position:absolute; left:300px; top :100px; border-width: 2px; border-color:black;
+  position:absolute; left:300px; top :100px; border-width: 2px;
+  border-color:black;
 }
 .menu{
     display:none; background-color: orange; width:130px; padding:0px;
@@ -81,6 +81,13 @@ display:none;
 #board{
 display:none;
 }
+
+#workform{
+display:none;
+}
+#changepassword{
+  display:none;
+}
 /*
 #personalform{
 display:none;
@@ -100,11 +107,14 @@ form{
 }
 form input{
   position:absolute;  left:300px;  color:black;  font-family: purisa;  height:30px;  background-color: #ffffe6;
-  border-color: red;  border-width: 2px;  border-radius:5px; font-size: 10px;
-
+  border-color: red;  margin:10px; border-width: 2px;  border-radius:5px; font-size: 15px;
 }
 form label{
   color:#003399; width:200px;  white-space: nowrap; font-weight:3px;
+}
+.select1{
+  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:30px;  background-color: #ffffe6;
+  border-color: red;  border-width: 2px;  border-radius:5px; font-size: 10px;
 
 }
 .submit{
@@ -167,9 +177,7 @@ textarea{
   width:400px; height:80px; position:absolute;  left:300px;  color:black;  font-family: purisa;    background-color: #ffffe6;
   border-color: red;  border-width: 2px;  border-radius:5px;
 }
-select{position:absolute;  left:300px;  color:black;  font-family: purisa;    background-color: #ffffe6;
-border-color: red;  border-width: 2px;  border-radius:5px;
-}
+
 h1{
   color:orange;
 }
@@ -182,28 +190,33 @@ a:link {
 }a:active {
     color: auto; text-decoration: none;
 }
-#view{
-  height:204px; width:320px;
-  border:black solid 1px;
-  border-top: 1px solid #96d1f8;
-  background: orange;
-  -webkit-border-radius: 2px;   -moz-border-radius: 2px;   border-radius: 5px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;   box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 1px 0;   color: black;   font-size: 18px;   font-family: Georgia, serif;   text-decoration: none;   vertical-align: middle;
+#viewads{
+ display:none;
+}
+#ad{
+  border:none; color:grey; margin:20px; display:inline-block;
 }
 .Name{
-  height:40px; width:320px; font-size: 20px;
-  border:black solid 1px; text-align:center;
+  height:40px; width:320px;
+   text-align:center; background-color: white; border:none;
 }
 .description{
-  text-align:justify; border:black solid 1px;  height:80px; width:320px;
+  text-align:justify;   height:80px; width:320px;padding:2px;
 }
 .left{
-  text-align:left; border:black solid 1px;  height:80px; width:160px; float:left;
+  text-align:left;   height:80px; width:160px; float:left;padding:2px;
 }
 .right{
-  text-align:right; border:black solid 1px;  height:80px; width:160px; float:right;
+  text-align:right;   height:80px; width:160px; float:right; padding:2px;
 }
 .item{
-  display:flex;
+  display:flex; border:none;
+}
+
+#ad:hover{
+  border: 2px #ffd633 solid; color:#666666;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#ad hr{
+  width:300px;
 }
