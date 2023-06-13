@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html >
 <head><link rel="shortcut icon" href="fl.ico" />
 <title>LookFreelanzers</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -20,18 +19,18 @@
       <div class="clr"></div>
       <div class="menu_nav">
         <ul>
-          <li class="active"><a href="index.html"><span>Home Page</span></a></li>
+          <li ><a href="index.html"><span>Home Page</span></a></li>
           <li><a href="about.html"><span>About Us</span></a></li>
           <li><a href="login.html"><span>Login</span></a></li>
-          <li><a href="register.html"><span>register</span></a></li>
-          <li><a href="contact.html"><span>Contact Us</span></a></li>
+          <li><a href="register.html"><span>Register</span></a></li>
+          <li class="active"><a href="contact.html"><span>Contact Us</span></a></li>
         </ul>
       </div>
       <div class="clr"></div>
       <div class="slider">
-        <div id="coin-slider"> <a href="#"><img height='360' width='960' src="images/slide1.jpg" width="960" height="360" alt="" /><span>
-          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second.</span></a> <a href="#"><img src="images/slide2.jpg" height='360' width='960'  alt="" /><span>
-          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second..</span></a> <a href="#"><img src="images/slide3.jpg" height='360' width='960'  alt="" /><span>
+        <div id="coin-slider"> <a href="#"><img src="images/slide1.jpg" width="960" height="360" alt="" /><span>
+          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second.</span></a> <a href="#"><img src="images/slide2.jpg" width="960" height="360" alt="" /><span>
+          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second..</span></a> <a href="#"><img src="images/slide3.jpg" width="960" height="360" alt="" /><span>
           The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second..</span></a> </div>
         <div class="clr"></div>
       </div>
@@ -40,17 +39,33 @@
     <div class="content_resize">
       <div class="mainbar">
         <div class="article">
-          <h2><span>Excellent Solution</span> For Your Job requirements</h2>
+          <h2><span>Send us</span> mail</h2>
           <div class="clr"></div>
-          <div class="img"><img src="images/img1.jpg" width="236" height="220" alt="" class="fl" /></div>
-          <div class="post_content">
-            <p>Users can search for workers and their details for any job they want to get done, in just a few clicks. By Posting Ads, workers required by the Hirer for a different job or a project can be searched. </p>
-            <p>We provide access to a large number of freelancers with specific skills without the need to place job ads or provide work space, insurance, etc. Whether you are looking for qualified workers or looking to reduce costs and raise profit, we have the freelancers for you.</p>
-          </div>
-          <div class="clr"></div>
+          <form action="#" method="post" id="sendemail">
+            <ol>
+              <li>
+                <label for="name">Name (required)</label>
+                <input id="name" name="name" class="text" />
+              </li>
+              <li>
+                <label for="email">Email Address (required)</label>
+                <input id="email" name="email" class="text" />
+              </li>
+              <li>
+                <label for="website">Website</label>
+                <input id="website" name="website" class="text" />
+              </li>
+              <li>
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="8" cols="50"></textarea>
+              </li>
+              <li>
+                <input type="image" name="imageField" id="imageField" src="images/submit.gif" class="send" />
+                <div class="clr"></div>
+              </li>
+            </ol>
+          </form>
         </div>
-
-
       </div>
       <div class="sidebar">
         <div class="gadget">
@@ -64,6 +79,11 @@
           </ul>
         </div>
       </div>
+
+      </div>
+      <div class="clr"></div>
+    </div>
+  </div>
   <div class="fbg">
     <div class="fbg_resize">
       <div class="col c1">

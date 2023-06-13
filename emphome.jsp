@@ -35,8 +35,9 @@
 <html>
     <head>
       <link type="text/css" href="css/st.css" rel='stylesheet'>
-      <title>Employer Home</title>
-      <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <title>Employer Home</title>
+
     </head>
     <body>
       <div class='searchbar'>
@@ -56,7 +57,7 @@
             <select name="searchin" id="searchin">
     -->
           <img id='search2' src='images/search.jpg' onclick="ajaxsearch()">
-            <img src='images/pic.JPG' id="profile">
+            <img src='images/pic.png' id="profile">
           <img src='images/menu.png' id="menuButton">
         <label id='name'><%= (String)session.getAttribute("ename")%></label>
       </div><br>
@@ -108,7 +109,7 @@
            </select><br><br>
            <label>StartDate</label> <input type="date" name="sdate"/><br><br>
            <label>End Date</label> <input type="date" name="edate"/><br><br>
-           <label>Description</label> <textarea  required size="2000" name="desc" type="text"></textarea><br><br><br><br><br><br><br><br>
+           <label>Description</label> <textarea  required size="2000" name="desc" type="text"></textarea><br><br><br>
            <input class='submit' type="submit" value="Submit"/>
            </form>
          </span>
@@ -127,18 +128,18 @@
 <!--ad template-->
         <div id='viewads'>
 
-          <div id='ad1' class='ad' onclick="gotoprofile('ad1')">
+          <div id='ad1' class='ad' onclick="people('1')">
             <div class='adtitle'>
-              <div id='adid1' class='adid'>
+              <div id='adid1' style="display:none">
 
             </div>
             <div id='adname1' class='Name'>
 
             </div>
-          </div>
+          </div><hr>
             <div id='adfield1' class='workfield'>
                 <hr>
-            </div>
+            </div><hr>
               <div class='details'>
               <div class='item'>
                 <div id='startdate1' class='left'>
@@ -147,7 +148,7 @@
                 <div id='enddate1' class='right'>
 
                 </div>
-                </div>
+              </div><hr>
                 <div id='addescription1' class='description'>
 
                 </div>
@@ -157,18 +158,18 @@
             </div>
           </div>
 
-          <div id='ad2' class='ad' onclick="gotoprofile('ad2')">
+          <div id='ad2' class='ad' onclick="people('2')">
             <div class='adtitle'>
-              <div id='adid2' class='adid'>
+              <div id='adid2' style="display:none">
 
             </div>
             <div id='adname2' class='Name'>
 
             </div>
-          </div>
+          </div><hr>
             <div id='adfield2' class='workfield'>
-                <hr>
-            </div>
+
+            </div><hr>
               <div class='details'>
               <div class='item'>
                 <div id='startdate2' class='left'>
@@ -177,7 +178,7 @@
                 <div id='enddate2' class='right'>
 
                 </div>
-                </div>
+                </div><hr>
                 <div id='addescription2' class='description'>
 
                 </div>
@@ -186,72 +187,18 @@
                 </div>
             </div>
           </div>
-          <div id='ad3' class='ad' onclick="gotoprofile('ad3')">
+          <div id='ad3' class='ad' onclick="people('3')">
             <div class='adtitle'>
-              <div id='adid3' class='adid'>
+              <div id='adid3' style="display:none">
 
             </div>
-            <div id='adname1' class='Name'>
-
-            </div>
-          </div>
-            <div id='adfield3' class='workfield'>
-                <hr>
-            </div>
-              <div class='details'>
-              <div class='item'>
-                <div id='startdate3' class='left'>
-
-                </div>
-                <div id='enddate3' class='right'>
-
-                </div>
-                </div>
-                <div id='addescription3' class='description'>
-
-                </div>
-                <div id='adapplied3' class='apply'>
-
-                </div>
-            </div>
-          </div>
-          <div id='ad1' class='ad' onclick="gotoprofile('ad1')">
-            <div class='adtitle'>
-              <div id='adid1' class='adid'>
-
-            </div>
-            <div id='adname1' class='Name'>
-
-            </div>
-          </div>
-            <div id='adfield1' class='workfield'>
-                <hr>
-            </div>
-              <div class='details'>
-              <div class='item'>
-                <div id='startdate1' class='left'>
-
-                </div>
-                <div id='enddate1' class='right'>
-
-                </div>
-                </div>
-                <div id='addescription1' class='description'>
-
-                </div>
-                <div id='adapplied1' class='apply'>
-
-                </div>
-            </div>
-          </div>
-
-          <div id='ad3' class='ad' "gotoprofile('ad3')">
             <div id='adname3' class='Name'>
 
             </div>
-            <div id='adfield3' class='Name'>
+          </div>  <hr>
+            <div id='adfield3' class='workfield'>
 
-            </div>
+            </div>  <hr>
               <div class='details'>
               <div class='item'>
                 <div id='startdate3' class='left'>
@@ -260,7 +207,7 @@
                 <div id='enddate3' class='right'>
 
                 </div>
-                </div>
+                </div>  <hr>
                 <div id='addescription3' class='description'>
 
                 </div>
@@ -269,38 +216,19 @@
                 </div>
             </div>
           </div>
-          <div id='ad2' class='ad' "gotoprofile('ad2')">
-            <div id='adname2' class='Name'>
+
+          <div id='ad4' class='ad' onclick="people('4')">
+            <div class='adtitle'>
+              <div id='adid4' style="display:none">
 
             </div>
-            <div id='adfield2' class='Name'>
-              <hr>
-            </div>
-              <div class='details'>
-              <div class='item'>
-                <div id='startdate2' class='left'>
-
-                </div>
-                <div id='enddate2' class='right'>
-
-                </div>
-                </div>
-                <div id='addescription2' class='description'>
-
-                </div>
-                <div id='adapplied2' class='apply'>
-
-                </div>
-            </div>
-          </div>
-
-          <div id='ad4' class='ad' "gotoprofile('ad4')">
             <div id='adname4' class='Name'>
 
             </div>
+          </div>  <hr>
             <div id='adfield4' class='Name'>
-
-            </div>
+                  <hr>
+            </div>  <hr>
               <div class='details'>
               <div class='item'>
                 <div id='startdate4' class='left'>
@@ -309,7 +237,7 @@
                 <div id='enddate4' class='right'>
 
                 </div>
-                </div>
+                </div>  <hr>
                 <div id='addescription4' class='description'>
 
                 </div>
@@ -321,6 +249,88 @@
 
        </div>
 <!--ad template-->
+
+<div id='searchresult'>
+  <div class='ad' id='sr1' onclick="gotoprofile('1')">
+    <div id='srid1' style="display:none"></div>
+    <div class='SName' id='srname1'>
+
+    </div>
+    <div class='SName' id='srfield1'>
+
+    </div><hr>
+    <div class='details'>
+      <div class='item'>
+        <div class='left' id='srcontact1'>
+
+        </div>
+        <div class='right' id='sremail1'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='ad' id='sr2' onclick="gotoprofile('2')">
+    <div id='srid2' style="display:none"></div>
+  <div class='SName' id='srname2'>
+
+    </div>
+    <div class='SName' id='srfield2'>
+
+    </div><hr>
+    <div class='details'>
+      <div class='item'>
+        <div class='left' id='srcontact2'>
+
+        </div>
+        <div class='right' id='sremail2'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='ad' id='sr3' onclick="gotoprofile('3')">
+    <div id='srid3' style="display:none"></div>
+  <div class='SName' id='srname3'>
+
+    </div>
+    <div class='SName' id='srfield3'>
+
+    </div><hr>
+    <div class='details'>
+      <div class='item'>
+        <div class='left' id='srcontact3'>
+
+        </div>
+        <div class='right' id='sremail3'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class='ad' id='sr4' onclick="gotoprofile('4')">
+    <div id='srid4' style="display:none"></div>
+  <div class='SName' id='srname4'>
+
+    </div>
+    <div class='SName' id='srfield4'>
+
+    </div><hr>
+    <div class='details'>
+      <div class='item'>
+        <div class='left' id='srcontact4'>
+
+        </div>
+        <div class='right' id='sremail4'>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
           </div>
 
@@ -337,47 +347,3 @@
       <script type="text/javascript" src="js/j.js"></script>
           </body>
       </html>
-    <!--
-    Search can be done in 3 ways:
-    1. just give a search field and then write backend to check
-    all  the resources and job category for matches
-    2.provide two search fields: one to search by name
-    one to search by job(drop down for job)eesy peesy
-    3.provide 2 non mandatory fields, one specifying job type
-    and other for name
-      <form action="main()" method="get">
-        <input id="search" type="text" name="search"><br>
-        <select name="searchin" id="searchin">
-        <%
-          for(int i=0;i<count;i++)
-          {
-        %>
-        <option value="<%= field[i] %>"><%= field[i] %></option>
-        <%
-          }
-        %>
-
-        </select>
-        <input type="submit" value="Submit">
-      </form>
-      <div id="searchresults">
-      <br><hr>
-      <pre>
-        <form method="get" action="postAd">
-          Description <input required size="2000" name="desc" type="text">
-          number of resource required <input required type="number" name="requirement">
-          Work field <select name="field">
-          <%
-            for(int i=0;i<count;i++)
-            {
-          %>
-          <option value="<%= id[i] %>"><%= field[i] %></option>
-          <%
-            }
-          %>
-          </select>
-          <input type="submit" value="Submit">
-        </form>
-      </pre><br><br>
-      <a href="ShowMyAds">View your ads</a>
-      -->

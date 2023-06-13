@@ -10,17 +10,26 @@
   int count = 0;
   ResultSet rs;
 
-  /*
+  int id[]={};
+  String field[]={};
   try{
       stmt=con.createStatement();
       rs= stmt.executeQuery(query);
       while (rs.next())
         ++count;
+      id=new int[count];
+      field= new String[count];
+      rs.first();
+      for(int i=0;i<count;i++)
+      {
+        id[i]=rs.getInt("id");
+        field[i]=rs.getString("name");
+        rs.next();
+      }
     }catch (Exception e)
     {
         out.println(e);
     }
-  */
 %>
 <!doctype html>
 <html>
@@ -32,27 +41,36 @@
   <body>
     <div class='searchbar'>
         <img class='logo' src='images/logo.jpg'>
-        <input class='input1' id="search" type="text" name="search">
-        <select class='input1' name="searchin" id="searchin">
-            <option value="groot">groot</option>
-        </select>
-        <img id='search2' src='images/search.jpg'>
-          <img src='images/pic.JPG' id="profile">
+
+<form action="SearchAds">
+<select class='input1' name = "searchin" id="searchin">
+<%
+  for(int i=0;i<count;i++)
+  {
+%>
+    <option value="<%= id[i] %>"><%= field[i] %></option>
+<%
+  }
+%>
+</select>
+<input type="submit" value="search">
+</form>
+          <img src='images/pic.png' id="profile">
         <img src='images/menu.png' id="menuButton">
-      <label id='name'> </label>
+      <label id='name'> <%= (String)session.getAttribute("rname")%></label>
     </div><br>
     <div id='leftMenu'>
       <div class='content'>
         <a class='button' type="button" id="menu_button">Ads</a><br><br>
         <ul type="none" class='menu' id="menu">
-            <li class="submenu" id="SearchAd">Search</li>
+            <li class="submenu" id="searchad" onclick="">Search</li>
         </ul>
         <a class='button' type="button" id="menu_button2">Build Profile</a><br><br>
         <ul type="none" id="menu2" class='menu'>
-            <li class="submenu" id="personal">Details</li>
+            <li class="submenu" id="personal">Personal</li>
             <li class="submenu" id="work">Work</li>
         </ul>
-        <a class='button' type="button" id="menu_button3">View profile</a><br><br>
+
         <!--a class='button' type="button" href='index.html' id="menu_button5">About Us</a><br><br>
         <a class='button' type="button" href='index.html' id="menu_button6">Feedback</a><br><br>
         <a class='button' type="button" href='index.html' id="menu_button7">Home</a><br><br-->
@@ -61,32 +79,34 @@
 
     <div class='container2'>
       <span id="personalform">
+        <h1>
+        Update Your Details
+      </h1>
 
-
-                 <div id="section">
-                 <p style="text-align:justify">Please ensure that the details you submitted while signing up were correct and also provide additional information to enhance your profile.Thus, improving the search results and increasing your visibility to the hirers.</p>
+         <div id="section">
+           <p style="text-align:justify">Provide additional information to enhance your profile.Thus, improving the search results and increasing your visibility to the hirers.</p>
                  <form method ='get' action='changeDetails'><br><br>
-                   <label>Name </label>*<input required type="text" name="name" placeholder="your name"><br><br>
-                   <label>Contact Number </label>*<input required type='text' name="contact" maxlength="12" required size="30" placeholder="your contact number"><br><br>
+                   <label>Name </label><input required type="text" name="name" placeholder="your name" size="30"><br><br>
+                   <label>Contact Number </label><input required type='text' name="contact" maxlength="12" required size="30" placeholder="your contact number"><br><br>
                    <label>Contact Number 2 </label><input type='text' name="contact" maxlength="12"  size="30" placeholder="secondary contact number incase the first one becomes disfunctional "><br><br>
-                   <label>Address </label>*<input type='text' name="add" maxlength="100" required size="30" placeholder="your address"><br><br>
+                   <label>Address </label><input type='text' name="add" maxlength="100" required size="30" placeholder="your address"><br><br>
                    <label>Permanent Address </label><input type='text' name="add" maxlength="100" size="30" placeholder="optional"><br><br>
-                   <label>Email Address *</label><br><br><input  required type="text" name='email' maxlength="50" size="30"  required placeholder="username@domain.com">
+                   <label>Email Address</label><input  required type="text" name='email' maxlength="30" size="30"  required placeholder="username@domain.com">
                  <br><br>
-                   <label>Job Category *</label>
-                   <select name="work fields" required>
+                   <label>Job Category</label>
+                   <select name="work fields" required width='30'>
                      <option value="actor">Actor</option>
                      <option value="carpenter">Carpenter</option>
                      <option value="other">Other</option>
                     </select><br><br>
-                  <label>Place *</label>
-                 <select name="place" required>
+                  <label>Place</label>
+                 <select name="place" required width='30'>
                      <option value="Mumbai">Mumbai</option>
                      <option value="Indore">Indore</option>
                      <option value="other">Other</option>
                  </select><br><br>
                  <label>State</label>
-                 <select name="state">
+                 <select name="state" width='30'>
                  	<option value="Andhra Pradesh">Andhra Pradesh</option>
                  	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
                  	<option value="Assam">Assam</option>
@@ -129,58 +149,171 @@
                  <input type="radio" name="marital" value="single" >Single<br>
                  <input type="radio" name="marital" value="married">Married<br>
                  <input type="radio" name="marital" value="divorced">Divorced<br><br>
-                 <input type="submit" value="Update">
+                 <input type="submit" value="Update" class='submit'>
                  </form>
                 </div>
-
       </span>
-      <span id="workform">
-          <h1>Work Details</h1>
-              <input type='radio'>Skillset<br><br>
-              <input type='radio'>Certifications<br><br>
-              <input type='radio'>Past Experience<br>
-            <form id="skillset" style="font-family:'monotype corosiva';font-size:100%;" method='post'><br>
-              <br><br>  <input class='submit' value="Submit" type="submit" class="button">
-            </form><br>
-            <form id="certification" style="font-family:'monotype corosiva';font-size:100%;" method='post'><br>
-              <br><br>  <input class='submit' value="Submit" type="submit" class="button">
-            </form><br>
-            <form id="exp" style="font-family:'monotype corosiva';font-size:100%;" method='post'><br>
-              <br><br>  <input class='submit' value="Submit" type="submit" class="button">
-            </form>
-          </span>
-<!--ad template-->
-      <div id='viewads'>
-       <div id='ad'>
-         <div id="adname" class='Name'>
-           <hr>
-         </div>
-         <div class='details'>
-          <div id="addesc" class='description'>
 
-          </div><hr>
+
+      <span  id="changepassword">
+        <h1>Change Password</h1>
+        <form style="font-family:Berlin Sans FB;font-size:100%;" method="post" action="ChangePassword" >
+        <br><label>Old Password</label><input required type="password" name="oldpassword"><br><br>
+        <br><label>New Password</label><input required type="password" name="newpassword"><br><br>
+        <br><label>Confirm Password</label><input required type="password" name="newpassword2"><br><br>
+       <input class='submit' type="submit" value="Submit">
+       </form>
+    </span>
+
+
+    <div id='viewads'>
+      <div class='ad'>
+        <div class='SName'>
+          Rajesh
+        </div>
+        <div class='SName'>
+          Web Designer
+        </div><hr>
+        <div class='details'>
           <div class='item'>
-           <div class='left'>
-             left
-           </div>
-           <div class='right'>
-             right
-           </div>
-         </div>
+            <div class='left'>
+              +91-9833355556
+              raj@gmail.com
+              Indore
+            </div>
+            <div class='right'>
+              Works at:PERL solutions,
+              Indore
+            </div>
+          </div>
         </div>
-       </div>
-     </div>
-     <!--ad template-->
-        </div>
-   <div id='rightmenu'>
-     <ul type='none'>
-         <li class="submenu2"><a>Logout</a></li>
-         <li class="submenu2"><a>Home</a></li>
-         <li class='submenu2'><a>View profile</a><li>
-         <li class='submenu2'><a>Complaint</a><li>
-     </ul>
-   </div>
+      </div>
+  </div>
 
+
+      <span id="workform">
+        <h1>
+        Fill The Work Details<br><br>
+      </h1>
+        <div>
+        <form>
+        <input type="radio" id='skillset' name="entry" value="skillSet"> Skills <br><br>
+        <input type="radio" id='experience' name="entry" value="experience">Experience<br><br>
+        <input type="radio" id='certificate' name="entry" value="certificates">Your certifications<br><br>
+        </form>
+        </div>
+        <!-- margin-left: 2px;
+            margin-right: 2px;
+            padding-top: 0.35em;
+            padding-bottom: 0.625em;
+            padding-left: 0.75em;
+            padding-right: 0.75em;
+        Ye field ki default css hai change the desired option to achieve the required identation on the page-->
+        <div  id='skillform'>
+        <form action="AddSkill" method="get">
+        <fieldset style="margin-right: 800px">
+        <legend>Add Skills </legend>
+        <input type='text' name='skills' required/><br><br>
+        <input type='submit' value='ADD'/>
+        </fieldset>
+        </form>
+        </div>
+        <div style ="margin-left=800px" id='expform'>
+          <form action="AddExperience" method="get">
+
+      	<fieldset>
+      	<legend>Experience</legend>
+      		<br><br>
+      		<!--input type="radio" id='cb1'name="project" value="projects"-->Projects</input> <br>				<br>
+          <form id="project">
+
+      			<table border="0" style="width:80%; text-align:center">
+      <tr>
+      <td><input type="text" name="name1" placeholder="project name"></td>
+      <td><input type="text" name="TechUsed" placeholder="Technologies used" ></td>
+      <td><input type="text" name="kabkiya" placeholder="year of project completion" ></td>
+      <td><input type='button' name='' value='ADD'></td>
+      </tr>
+      </table>
+    </form>
+      <br><br>
+      		<!--input type="radio" id='cb2'name="intern" value="intern"-->Intern <br>
+          <form id='intern'>
+      			<br><table border="0" style="width:80%; text-align:center">
+        <tr>
+       <td><input type="text" name="name2" placeholder="Company name"></td>
+       <td><input type="text" name="kabkiya" placeholder="completion year" ></td>
+      <td><textarea cols= "80" rows="1"  required placeholder="brief description of the skills learned"></textarea></td>
+      <td><input type='button' name='' value='ADD'></td>
+      </tr>
+    </form>
+        </table>
+      			<br><br>
+      		<!--input type="radio"  id='cb3' name="training" value="training"-->Training <br>
+          <form id='training'>
+      			<br><table border="0" style="width:80%; text-align:center">
+      <tr>
+      <td><input type="text" name="name3" placeholder="Company name"></td>
+          <td><input type="text" name="kabkiya" placeholder="completion year"> </td>
+      <td><textarea cols= "80" rows="1"  required placeholder="Technologies trained in"></textarea></td>
+      <td><input type='button' name='' value='ADD'></td>
+    </form>
+        			</tr>
+      			</table>
+      			<br><br>
+      		<!--input type="radio" id='cb4' name="job" value="job"-->Job
+          <form id='job'>
+      			<br><table border="0" style="width:80%; text-align:center ">
+
+        <tr>
+        <td height="100"><input type="text" name="name4" placeholder="Company name"></td>
+      <td height="100"><input type="text" name="work filed" placeholder="mention your work field"></td>
+             <td><input type="text" name="kabsejoinkiya" placeholder="year of joining company"> </td>
+      </tr>
+      <tr>
+
+      <td><input type="radio" name="status" value="present">Still working there</br>
+      <input type="radio" name="status" value="past">Switched Job</td>
+      <td><textarea cols= "80" rows="1"  required placeholder="brief account of your work in the job specified"></textarea></td>
+      <td><input type='button' name='' value='ADD'></td>
+        			</tr>
+
+      			</table>
+            </form>
+      			<br><br>
+      	</fieldset>
+      </form>
+      </div>
+      <div id='certform'>
+      	<form action="AddCertificate" method="get">
+      	<fieldset>
+      	<legend>Certifications</legend><br><br>
+      		<table border="0" style="width:100%; text-align:center">
+      <tr> <!--this should be auto incremented on pressing enter by the user-->
+      <td><input type="text" name="certiname" placeholder="Field of Certification"></td>
+      <td><input type="text" name="certifiedby" placeholder="Certified by"> </td>
+      <td><input type='submit' name='' value='ADD'></td>
+      </tr>
+      </table>
+      </form>
+      	</fieldset>
+      	</form>
+      </div>
+      </span>
+
+
+  </div>
+        <div id='rightmenu'>
+          <ul type='none'>
+              <li class="submenu2"><a href="Logout">Logout</a></li>
+              <li class="submenu2" onclick="hideall()"><a>Home</a></li>
+              <li class='submenu2' id="ChangePassword"><a>Change Password </a><li>
+              <li class='submenu2'><a>Complaint</a><li>
+          </ul>
+        </div>
+        <div >
+        Fill The Work Details<br><br>
+        </div>
     <script type="text/javascript" src="js/jquery.js"></script>
     <script type="text/javascript" src="js/j.js"></script>
         </body>
