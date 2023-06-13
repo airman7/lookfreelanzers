@@ -93,10 +93,10 @@
           </span>
 
           <span  id="postad">
-            <h1>Post New Add</h1>
-            <form style="font-family:Berlin Sans FB;font-size:100%;" method="post" action="postAd" >
-            <br><label>Title</label><input required type="text" name="title"/><br><br>
-            <label>  Work field </label><select name="field">
+            <h1>Post New Ad</h1>
+            <form  method="post" action="postAd" ><br><br>
+            <label>Title</label><input required type="text" name="title"/><br><br>
+            <label>  Work field </label><select name="field" class='select1'>
              <%
                for(int i=0;i<count;i++)
                {
@@ -108,7 +108,7 @@
            </select><br><br>
            <label>StartDate</label> <input type="date" name="sdate"/><br><br>
            <label>End Date</label> <input type="date" name="edate"/><br><br>
-           <label>Description</label> <textarea  required size="2000" name="desc" type="text"></textarea><br><br><br><br><br>
+           <label>Description</label> <textarea  required size="2000" name="desc" type="text"></textarea><br><br><br><br><br><br><br><br>
            <input class='submit' type="submit" value="Submit"/>
            </form>
          </span>
@@ -126,24 +126,199 @@
 
 <!--ad template-->
         <div id='viewads'>
-         <div id='ad'>
-           <div id="adname" class='Name'>
-             <hr>
-           </div>
-           <div class='details'>
-            <div id="addesc" class='description'>
 
-            </div><hr>
-            <div class='item'>
-             <div class='left'>
-               left
-             </div>
-             <div class='right'>
-               right
-             </div>
-           </div>
+          <div id='ad1' class='ad' onclick="gotoprofile('ad1')">
+            <div class='adtitle'>
+              <div id='adid1' class='adid'>
+
+            </div>
+            <div id='adname1' class='Name'>
+
+            </div>
           </div>
-         </div>
+            <div id='adfield1' class='workfield'>
+                <hr>
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate1' class='left'>
+
+                </div>
+                <div id='enddate1' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription1' class='description'>
+
+                </div>
+                <div id='adapplied1' class='apply'>
+
+                </div>
+            </div>
+          </div>
+
+          <div id='ad2' class='ad' onclick="gotoprofile('ad2')">
+            <div class='adtitle'>
+              <div id='adid2' class='adid'>
+
+            </div>
+            <div id='adname2' class='Name'>
+
+            </div>
+          </div>
+            <div id='adfield2' class='workfield'>
+                <hr>
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate2' class='left'>
+
+                </div>
+                <div id='enddate2' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription2' class='description'>
+
+                </div>
+                <div id='adapplied2' class='apply'>
+
+                </div>
+            </div>
+          </div>
+          <div id='ad3' class='ad' onclick="gotoprofile('ad3')">
+            <div class='adtitle'>
+              <div id='adid3' class='adid'>
+
+            </div>
+            <div id='adname1' class='Name'>
+
+            </div>
+          </div>
+            <div id='adfield3' class='workfield'>
+                <hr>
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate3' class='left'>
+
+                </div>
+                <div id='enddate3' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription3' class='description'>
+
+                </div>
+                <div id='adapplied3' class='apply'>
+
+                </div>
+            </div>
+          </div>
+          <div id='ad1' class='ad' onclick="gotoprofile('ad1')">
+            <div class='adtitle'>
+              <div id='adid1' class='adid'>
+
+            </div>
+            <div id='adname1' class='Name'>
+
+            </div>
+          </div>
+            <div id='adfield1' class='workfield'>
+                <hr>
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate1' class='left'>
+
+                </div>
+                <div id='enddate1' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription1' class='description'>
+
+                </div>
+                <div id='adapplied1' class='apply'>
+
+                </div>
+            </div>
+          </div>
+
+          <div id='ad3' class='ad' "gotoprofile('ad3')">
+            <div id='adname3' class='Name'>
+
+            </div>
+            <div id='adfield3' class='Name'>
+
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate3' class='left'>
+
+                </div>
+                <div id='enddate3' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription3' class='description'>
+
+                </div>
+                <div id='adapplied3' class='apply'>
+
+                </div>
+            </div>
+          </div>
+          <div id='ad2' class='ad' "gotoprofile('ad2')">
+            <div id='adname2' class='Name'>
+
+            </div>
+            <div id='adfield2' class='Name'>
+              <hr>
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate2' class='left'>
+
+                </div>
+                <div id='enddate2' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription2' class='description'>
+
+                </div>
+                <div id='adapplied2' class='apply'>
+
+                </div>
+            </div>
+          </div>
+
+          <div id='ad4' class='ad' "gotoprofile('ad4')">
+            <div id='adname4' class='Name'>
+
+            </div>
+            <div id='adfield4' class='Name'>
+
+            </div>
+              <div class='details'>
+              <div class='item'>
+                <div id='startdate4' class='left'>
+
+                </div>
+                <div id='enddate4' class='right'>
+
+                </div>
+                </div>
+                <div id='addescription4' class='description'>
+
+                </div>
+                <div id='adapplied4' class='apply'>
+
+                </div>
+            </div>
+          </div>
+
        </div>
 <!--ad template-->
 

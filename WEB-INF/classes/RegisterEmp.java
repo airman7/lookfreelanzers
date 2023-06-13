@@ -10,7 +10,9 @@ public class RegisterEmp extends HttpServlet
 		response.setContentType("text/html");//setting the content type
 
 		//RegisterEmp?name=&email=&description=&username=&password=&password2=
-        PrintWriter out = response.getWriter();
+    //RegisterEmp?name=wewew&contact=54334&add=erwe&email=m%40gmail.com
+		//&username=maya&password=maya&password2=12345678&type=employer
+		    PrintWriter out = response.getWriter();
         Connection con=Conn.getCon();
         String query = "insert into employer(ename,username,password,address,contact,email,description) values(?,?,?,?,?,?,?)";
 
