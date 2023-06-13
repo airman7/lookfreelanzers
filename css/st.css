@@ -14,7 +14,7 @@
 float:left;  height:40px;  width:200px;  padding-right: 10px; margin-top:5px; margin-left:5px;
 }
 .searchbar{
-  width: 98%;   height: 50px; z-index: 3;; box-shadow: 10px 10px 5px #888888;  position:fixed; background-color: white;
+  width: 98%;   height: 50px; z-index: 3;  position:fixed; background-color: white;
 }
 #name{
   float:right; font-family: 'purisa'; margin-right:20px; font-size:30px; margin-top:5px;
@@ -29,17 +29,17 @@ float:left;  height:40px;  width:200px;  padding-right: 10px; margin-top:5px; ma
   cursor:pointer;
 }
 body{
-/*  background: url('images/bg.jpg'); background-repeat: none;*/
+	background:#e1e1e1 url(../images/main_bg.gif) repeat-x left top;
 }
 
 #leftMenu{
   float:left; width:200px;
 }
 .content{
-    position:absolute; top:50px; width:200px; margin:10px; border:black 2px; margin-top:80px;
+    position:absolute; top:100px; width:200px; margin:10px; border:black 2px; margin-top:80px;
 }
 .container2{
-  position:absolute; left:300px; top :100px; border-width: 2px;
+  position:absolute; left:300px; top :200px; border-width: 2px;
   border-color:black;
 }
 .menu{
@@ -47,12 +47,12 @@ body{
     margin-left:5px; border-color:black; border-width:20px; margin-top:2px;
 }
 .submenu{
-  background-color: orange; width:130px; height:20px;
- padding:2px; list-style-position:inside;
-    border: 1px solid black;
+  background-color: darkblue; width:200px; height:40px;
+ padding:2px; list-style-position:inside; color:white;
+    border: 1px solid black; text
 }
 .submenu:hover{
-  cursor:default; background-color: #e67300;
+  cursor:default; background-color: white; color:darkblue;
 }
 .button {
   width:200px;
@@ -72,8 +72,22 @@ body{
    border-top-color: #1b435e;   background: #1b435e;
    }
 #personalform{
-
+display:none;
 }
+
+#sr1{
+display:none;
+}
+#sr2{
+display:none;
+}
+#sr3{
+display:none;
+}
+#sr4{
+display:none;
+}
+
 #postad{
 display:none;
 }
@@ -83,7 +97,7 @@ display:none;
 }
 
 #workform{
-display:none;
+  display:none;
 }
 #changepassword{
   display:none;
@@ -100,21 +114,49 @@ display:none;
 }
 */
 
+
+label, input {
+    /* in order to define widths */
+    display: inline-block;
+}
+
+
+
+label + input {
+
+    /* large margin-right to force the next element to the new-line
+       and margin-left to create a gutter between the label and input */
+    margin-right:30%; margin-left:10px;
+}
+
+/* only the submit button is matched by this selector,
+   but to be sure you could use an id or class for that button */
+input + input {
+    float: right;
+}
+​
 form{
   text-align:left;
   position:absolute;
   top:50px; padding 2px;
 }
-form input{
-  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:20px;  background-color: #cccccc; border-color:#0d0d0d;  margin:2px; border-width: 2px;  border-radius:5px; font-size: 15px;
+
+form input,select,textarea{
+   color:white;  font-family: purisa;    background-color:grey; border-color:black;  border-width: 2px;  border-radius:5px; font-size: 15px;
 }
 form label{
-  color:#003399; width:200px;  white-space: nowrap; font-weight:3px; height:20px;
+  color:#003399; width:200px;  white-space: nowrap; font-weight:3px; height:20px; text-align:left;
 }
 .select1{
-  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:20px;  background-color: #cccccc;
+  color:black;  font-family: purisa;  height:20px;  background-color: #cccccc;
   border-color:#0d0d0d;  border-width: 2px;  border-radius:5px; font-size: 10px;
 
+}
+textarea{
+  width:400px;   color:black;  font-family: purisa;    background-color: #f2f2f2; border-color:#0d0d0d;  border-width: 1px;  border-radius:0px;
+}
+textarea:focus{
+  height:80px;
 }
 .submit{
    border-top: 1px solid #96d1f8;
@@ -125,9 +167,9 @@ form label{
    background: -ms-linear-gradient(top, #d45d6d, #c47c7c);
    background: -o-linear-gradient(top, #d45d6d, #c47c7c);
    padding: 8.5px 17px;
-   -webkit-border-radius: 22px;
-   -moz-border-radius: 22px;
-   border-radius: 22px;
+
+
+
    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
    box-shadow: rgba(0,0,0,1) 0 1px 0;
@@ -136,7 +178,7 @@ form label{
    font-size: 15px;
    font-family: Georgia, Serif;
    text-decoration: none;
-   vertical-align: middle; height:40px;width:100px;
+   vertical-align: middle; height:30px;width:70px;
 padding-right:10px; padding-left:10px; padding-bottom: 5px;}
 .button:hover {
    border-top-color: #28597a;
@@ -147,6 +189,9 @@ padding-right:10px; padding-left:10px; padding-bottom: 5px;}
    border-top-color: #1b435e;
    background: #1b435e;
 
+}
+#workform{
+  display:none;
 }
 #Searchresults{
   display:none;
@@ -172,12 +217,9 @@ padding:1px; list-style-position:inside; margin-right:30px; border:black solid 1
 .submenu2:hover{
   cursor:default; background-color: #cccccc;
 }
-textarea{
-  width:400px; height:80px; position:absolute;  left:300px;  color:black;  font-family: purisa;    background-color: #cccccc; border-color:#0d0d0d;  border-width: 2px;  border-radius:5px;
-}
 
 h1{
-  color:orange;
+  color:darkblue;
 }
 a:link {
     color: auto; text-decoration: none;
@@ -191,25 +233,33 @@ a:link {
 #viewads{
  display:none;
 }
+#viewsearch{
+
+}
 .ad{
   border:grey solid 1px; color:grey; margin:20px; display:inline-block;
 }
 .Name{
   height:40px; width:240px;border:none;
-   text-align:center; background-color: white;
+  text-align:center;
+}
+.SName{
+  height:40px; width:240px;border:none;
+   text-align:center;
 }
 .adid{
   height:40px; width:80px; border:none;
-   text-align:center; background-color: white;
+   text-align:center;
 }
 .adtitle{
   height:40px; width:320px;display:flex;
-   text-align:left; background-color: white;
+   text-align:left;
 }
 .workfield{
   height:40px; width:320px;border:none;
-   text-align:center; background-color: white;
-}.apply{
+   text-align:center;
+}
+.apply{
   text-align:center;   height:40px; width:320px;padding:2px;
 }
 .description{
@@ -242,3 +292,15 @@ a:link {
 }#ad4{
   display:none;
 }
+
+#searchresult{
+  display:none;
+}
+#skillform{display:none;}
+#expform{display:none;}
+#certform{display:none;}
+#project{display:none;}
+/*#job{display:none;}
+
+#intern{display:none;}
+#training{display:none;}
