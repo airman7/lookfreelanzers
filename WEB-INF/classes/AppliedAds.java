@@ -33,7 +33,7 @@ public class AppliedAds extends HttpServlet{
           HttpSession session=request.getSession();
           String id= (String) session.getAttribute("rid");
 
-            ps=con.prepareStatement(get);
+            ps=con.prepareStatement(getr);
             ps2=con.prepareStatement(getname);
             ps2.setInt(1,Integer.parseInt(id));
             rs=ps2.executeQuery();

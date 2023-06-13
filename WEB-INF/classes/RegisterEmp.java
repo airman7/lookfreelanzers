@@ -51,7 +51,7 @@ public class RegisterEmp extends HttpServlet
           out.println("<center><h1>Congratulations!!!<br><center><br><br>");
           out.println("You have successfully registered yourself.<br>Now get started!!</h1><br><br>");
           out.println("<a href=\"index.html\">Go to Home</a><br><br>");
-					out.println("<a href=\"Login.html\">Go to Login</a>");
+					out.println("<a href=\"login.html\">Go to Login</a>");
 					out.println("</body></html>");
 
         }

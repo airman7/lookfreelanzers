@@ -21,12 +21,12 @@ public class AddExperience extends HttpServlet{
         Connection con=Conn.getCon();
         HttpSession ses=req.getSession();
         String query="insert into skill values(?,?)";
-        PreparedStatement pres;
+        PreparedStatement pres = null;
 
         try{
             pres.setInt(1,(int) ses.getAttribute("rid"));
             pres.setString(2,req.getParameter("pass"));
-            pres.updateQuery();
+            pres.executeQuery();
             con.close();
         }
         catch(Exception e)
@@ -34,6 +34,6 @@ public class AddExperience extends HttpServlet{
             out.println("<h3> Error. Try again later.</h3>");
             e.printStackTrace(out);
         }
-        response.sendRedirect("workerhome.jsp");
+        res.sendRedirect("workerhome.jsp");
     }
 }
