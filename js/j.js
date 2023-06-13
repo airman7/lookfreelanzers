@@ -33,11 +33,8 @@ $("#menu_button").click(function(){
     hideall();
     $('#changepassword').toggle(1000);
   });
-  
-  $('#search2').click(function(){
-    $('#searchresults').toggle();
-  });
-  $("#datepicker").datepicker();
+
+
 });
 
 function hideall()

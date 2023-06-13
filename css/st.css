@@ -3,7 +3,7 @@
     display:inline-block;
 }
 .input1{
-  height:40px;  width:200px; font-family:purisa; font-size:20px; float:left;position:relative;
+  height:30px;  width:200px; font-family:purisa; font-size:20px; float:left;position:relative;
   border-width: 3px; vertical-align: top;
     display:inline-block;  background-color: #cccccc; border-color:#0d0d0d; border-radius:5px; margin:5px;
 }
@@ -72,7 +72,7 @@ body{
    border-top-color: #1b435e;   background: #1b435e;
    }
 #personalform{
-display:none;
+
 }
 #postad{
 display:none;
@@ -103,18 +103,17 @@ display:none;
 form{
   text-align:left;
   position:absolute;
-  top:50px;
+  top:50px; padding 2px;
 }
 form input{
-  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:30px;  background-color: #ffffe6;
-  border-color: red;  margin:10px; border-width: 2px;  border-radius:5px; font-size: 15px;
+  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:20px;  background-color: #cccccc; border-color:#0d0d0d;  margin:2px; border-width: 2px;  border-radius:5px; font-size: 15px;
 }
 form label{
-  color:#003399; width:200px;  white-space: nowrap; font-weight:3px;
+  color:#003399; width:200px;  white-space: nowrap; font-weight:3px; height:20px;
 }
 .select1{
-  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:30px;  background-color: #ffffe6;
-  border-color: red;  border-width: 2px;  border-radius:5px; font-size: 10px;
+  position:absolute;  left:300px;  color:black;  font-family: purisa;  height:20px;  background-color: #cccccc;
+  border-color:#0d0d0d;  border-width: 2px;  border-radius:5px; font-size: 10px;
 
 }
 .submit{
@@ -174,8 +173,7 @@ padding:1px; list-style-position:inside; margin-right:30px; border:black solid 1
   cursor:default; background-color: #cccccc;
 }
 textarea{
-  width:400px; height:80px; position:absolute;  left:300px;  color:black;  font-family: purisa;    background-color: #ffffe6;
-  border-color: red;  border-width: 2px;  border-radius:5px;
+  width:400px; height:80px; position:absolute;  left:300px;  color:black;  font-family: purisa;    background-color: #cccccc; border-color:#0d0d0d;  border-width: 2px;  border-radius:5px;
 }
 
 h1{
@@ -193,30 +191,54 @@ a:link {
 #viewads{
  display:none;
 }
-#ad{
-  border:none; color:grey; margin:20px; display:inline-block;
+.ad{
+  border:grey solid 1px; color:grey; margin:20px; display:inline-block;
 }
 .Name{
-  height:40px; width:320px;
-   text-align:center; background-color: white; border:none;
+  height:40px; width:240px;border:none;
+   text-align:center; background-color: white;
+}
+.adid{
+  height:40px; width:80px; border:none;
+   text-align:center; background-color: white;
+}
+.adtitle{
+  height:40px; width:320px;display:flex;
+   text-align:left; background-color: white;
+}
+.workfield{
+  height:40px; width:320px;border:none;
+   text-align:center; background-color: white;
+}.apply{
+  text-align:center;   height:40px; width:320px;padding:2px;
 }
 .description{
   text-align:justify;   height:80px; width:320px;padding:2px;
 }
 .left{
-  text-align:left;   height:80px; width:160px; float:left;padding:2px;
+  text-align:left;   height:60px; width:160px; float:left;padding:2px;
 }
 .right{
-  text-align:right;   height:80px; width:160px; float:right; padding:2px;
+  text-align:right;   height:60px; width:160px; float:right; padding:2px;
 }
 .item{
   display:flex; border:none;
 }
 
-#ad:hover{
-  border: 2px #ffd633 solid; color:#666666;
+.ad:hover{
+  border: 2px #ffd633 solid; color:#666666; cursor:pointer;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-#ad hr{
+.ad hr{
   width:300px;
+}
+#ad1{
+  display:none;
+}
+#ad2{
+  display:none;
+}#ad3{
+  display:none;
+}#ad4{
+  display:none;
 }
