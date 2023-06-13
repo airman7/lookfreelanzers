@@ -18,30 +18,35 @@ function createXmlHttpRequestObject(){
     }
 
     if(!xmlHttp)
-        alert("cant create that object hoss!");
+        alert("cant create that object");
     else
         return xmlHttp;
 }
 
 function main()
 {
-  $("#personalform").hide(1000);
-  $("#postad").hide(1000);
+  $("#personalform").hide();
+  $("#postad").hide();
   $("#changepassword").hide();
-  $('#viewads').toggle();
+  $('#searchresult').hide();
+  $('#viewads').show();
   //add others too
     if(xmlHttp.readyState==0 || xmlHttp.readyState==4){
         xmlHttp.onreadystatechange =function (){
             if(xmlHttp.readyState==4){
         	   if( xmlHttp.status==200)
              {
-                  //alert(xmlHttp.responseText);
                   var res = eval ("(" + xmlHttp.responseText + ")");
                   for(i=0;i<res.ad.length;i++)
                   {
-                    $('#ad'+(i+1)).toggle();
-                    document.getElementById('adname'+(i+1)).innerHTML=res.ad[i].title;
-                    document.getElementById('adfield'+(i+1)).innerHTML=res.ad[i].field;
+                    $('#ad'+(i+1)).show();
+                    document.getElementById('adname'+(i+1)).innerHTML='Ad Title:'+res.ad[i].title;
+                    document.getElementById('adfield'+(i+1)).innerHTML='Work field:'+res.ad[i].field;
+                    document.getElementById('adid'+(i+1)).innerHTML=res.ad[i].adid;
+                    document.getElementById('startdate'+(i+1)).innerHTML='Start Date:'+res.ad[i].sdate;
+                    document.getElementById('enddate'+(i+1)).innerHTML='End Date:'+res.ad[i].edate;
+                    document.getElementById('addescription'+(i+1)).innerHTML='Description:'+res.ad[i].desc;
+                    document.getElementById('adapplied'+(i+1)).innerHTML='Freelancers Applied::'+res.ad[i].applied;
                     //alert(res.ad[i].title);
                     //alert(res.ad[i].field);
                   }
@@ -60,28 +65,89 @@ function main()
     }
 }
 
-function gotoprofile(var x)
+function people(x)
 {
-  window.location="profilepage.jsp/"+x;
+  var z = 'adid'+x;
+  var y=document.getElementById(z).innerHTML;
+
+  $("#personalform").hide();
+  $("#postad").hide();
+  $("#changepassword").hide();
+  $("#viewads").hide()
+  $("#sr1").hide();
+  $("#sr2").hide();
+  $("#sr3").hide();
+  $("#sr4").hide();
+
+  $('#searchresult').show();
+  //add others too
+    if(xmlHttp.readyState==0 || xmlHttp.readyState==4){
+        xmlHttp.onreadystatechange =function (){
+            if(xmlHttp.readyState==4){
+        	   if( xmlHttp.status==200)
+             {
+              //  alert(xmlHttp.responseText);
+                  var res = eval ("(" + xmlHttp.responseText + ")");
+                  for(i=0;i<res.applyer.length;i++)
+                  {
+                    $('#sr'+(i+1)).show();
+                    document.getElementById('srname'+(i+1)).innerHTML=res.applyer[i].name;
+                    document.getElementById('srfield'+(i+1)).innerHTML=res.applyer[i].work;
+                    document.getElementById('srcontact'+(i+1)).innerHTML=res.applyer[i].contact;
+                    document.getElementById('sremail'+(i+1)).innerHTML=res.applyer[i].email;
+                    document.getElementById('srid'+(i+1)).innerHTML=res.applyer[i].id;
+
+                  }
+              }
+              else
+              {
+                  alert('Something went wrong!');
+              }
+        	}
+        };
+        xmlHttp.open("GET", "/lookfreelanzers/ShowPeople?adid="+y, true);
+        xmlHttp.send(null);
+
+      }else{
+        setTimeout('people()', 1000);
+    }
 }
+
+function gotoprofile(x)
+{
+  var z = 'srid'+x;
+  var y=document.getElementById(z).innerHTML;
+  window.location="freelancer.jsp?id="+y;
+}
+
 function ajaxsearch()
 {
   $("#personalform").hide();
   $("#postad").hide();
   $('#viewads').hide();
   $("#changepassword").hide();
+  $("#sr1").hide();
+  $("#sr2").hide();
+  $("#sr3").hide();
+  $("#sr4").hide();
+  $("#searchresult").show();
   //add others too
-    if(xmlHttp.readyState==0 || xmlHttp.readyState==4){
+  if(xmlHttp.readyState==0 || xmlHttp.readyState==4){
       xmlHttp.onreadystatechange =function (){
             if(xmlHttp.readyState==4){
              if( xmlHttp.status==200)
                {
-                    alert(xmlHttp.responseText);
+                  //  alert(xmlHttp.responseText);
                     var obj = eval ("(" + xmlHttp.responseText + ")");
+
                     for(i=0;i<obj.result.length;i++)
                     {
-                      alert(obj.result[i].name);
-                      alert(obj.result[i].workfield);
+                      $('#sr'+(i+1)).show();
+                      document.getElementById('srname'+(i+1)).innerHTML=obj.result[i].name;
+                      document.getElementById('srfield'+(i+1)).innerHTML=obj.result[i].workfield;
+                      document.getElementById('srcontact'+(i+1)).innerHTML=obj.result[i].cont;
+                      document.getElementById('sremail'+(i+1)).innerHTML=obj.result[i].mail;
+                      document.getElementById('srid'+(i+1)).innerHTML=obj.result[i].id;
                     }
                 }
                 else{
