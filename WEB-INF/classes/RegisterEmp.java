@@ -9,61 +9,55 @@ public class RegisterEmp extends HttpServlet
 	{
 		response.setContentType("text/html");//setting the content type
 
-		//RegisterEmp?name=&email=&description=&username=&password=&password2=
-    //RegisterEmp?name=wewew&contact=54334&add=erwe&email=m%40gmail.com
-		//&username=maya&password=maya&password2=12345678&type=employer
+		//RegisterEmp?name=&contact=&add=&email=
+		//&username=&password=&password2=&type=employer
 		    PrintWriter out = response.getWriter();
         Connection con=Conn.getCon();
-        String query = "insert into employer(ename,username,password,address,contact,email,description) values(?,?,?,?,?,?,?)";
-
-        String ename=request.getParameter("name");
+        String query = "insert into employer(ename,username,password,address,contact,email) values(?,?,?,?,?,?)";
+				String res="insert into resource(rname,username,password,raddress,rcontact,email) values(?,?,?,?,?,?)";
+        String name=request.getParameter("name");
         String uid= request.getParameter("username");
         String password= request.getParameter("password");
         String address= request.getParameter("add");
         String contact = request.getParameter("contact");
-		String description=request.getParameter("description");
-		String email=request.getParameter("email");
-        if(uid!=null)
+				String type=request.getParameter("type");
+				String email=request.getParameter("email");
+        PreparedStatement ps;
+				try
         {
-        try
-        {
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ps.setString(1,ename);
-                    ps.setString(2,uid);
-                    ps.setString(3,password);
-                    ps.setString(4,address);
-                    ps.setString(5,contact);
+          if(type.equals("resource"))
+					{
+						ps = con.prepareStatement(res);
+          }
+					else
+					{
+						ps = con.prepareStatement(query);
+					}
+					ps.setString(1,name);
+          ps.setString(2,uid);
+          ps.setString(3,password);
+          ps.setString(4,address);
+          ps.setString(5,contact);
 					ps.setString(6,email);
-					ps.setString(7,description);
-                    ps.executeUpdate();
-                    con.close();
+          ps.executeUpdate();
+          con.close();
 
-                    out.println("<html>");
-                    out.println("<head>");
-                    out.println("<title> Congratulations!!</title>");
-                    out.println("</head>");
-                    out.println("<body>");
-                    out.println("<p style=\"font-family:calibri font-size:30\">");
-                    out.println("<center><h1>Congratulations!!!<br><center><br><br>");
-                    out.println("You have successfully registered yourself.<br>Now get started!!</h1><br><br>");
-                    out.println("<a href=\"index.html\">Go to Home</a><br><br>");
+          out.println("<html>");
+          out.println("<head>");
+          out.println("<title> Congratulations!!</title>");
+          out.println("</head>");
+          out.println("<body>");
+          out.println("<p style=\"font-family:calibri font-size:30\">");
+          out.println("<center><h1>Congratulations!!!<br><center><br><br>");
+          out.println("You have successfully registered yourself.<br>Now get started!!</h1><br><br>");
+          out.println("<a href=\"index.html\">Go to Home</a><br><br>");
 					out.println("<a href=\"Login.html\">Go to Login</a>");
-
-                    /*
-					HttpSession ses=request.getSession();
-                    ses.setAttribute("user",uname);
-                    ses.setAttribute("userid",uid);
-                    ses.setAttribute("institute",institute);
-                    out.println("<a href=\"enterdetails.jsp\" class=\"button\">CONTINUE</a></pre>");
-                    */
-
 					out.println("</body></html>");
 
-                }
-                catch (SQLException ex)
-                {
-                    out.println("ERROR");
-                }
+        }
+        catch (SQLException ex)
+        {
+            ex.printStackTrace(out);
         }
 	}
 }

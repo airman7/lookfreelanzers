@@ -21,7 +21,7 @@ public class ShowMyAds extends HttpServlet{
         PrintWriter out = response.getWriter();
 
         Connection con = Conn.getCon();
-        String get="select * from applied_ads where eid=?";
+        String get="select *,count(adid) from applied_ads where eid=? group by adid";
         String getad="select * from ad where adid=?";
         String field = "select name from `work fields` where id=?";
         //String getdata="select * from resource where rid=?";
@@ -64,8 +64,13 @@ public class ShowMyAds extends HttpServlet{
               ps3.setInt(1,Integer.parseInt(rs2.getString("field")));
               rs3=ps3.executeQuery();
               rs3.first();
-              send.append("{\"title\":\""+rs2.getString("title")+"\",");
-              send.append("\"field\":\""+rs3.getString("name")+"\"}");
+              send.append("{\"adid\":\""+rs2.getString("adid")+"\",");
+              send.append("\"title\":\""+rs2.getString("title")+"\",");
+              send.append("\"field\":\""+rs3.getString("name")+"\",");
+              send.append("\"sdate\":\""+rs2.getString("startdate")+"\",");
+              send.append("\"edate\":\""+rs2.getString("enddate")+"\",");
+              send.append("\"desc\":\""+rs2.getString("description")+"\",");
+              send.append("\"applied\":\""+rs.getString("count(adid)")+"\"}");
               if(rs.next())
               {
                 send.append(",");

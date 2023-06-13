@@ -39,7 +39,7 @@ public class ApplyForAd extends HttpServlet{
           int eid = Integer.parseInt(rs.getString("eid"));
           HttpSession ses=request.getSession();
 
-          int rid = (int) ses.getAttribute("rid");
+          int rid = Integer.parseInt((String) ses.getAttribute("rid"));
 
           ps=con.prepareStatement(query);
           ps.setInt(1,adid);

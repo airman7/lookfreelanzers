@@ -56,7 +56,7 @@ public class Signin extends HttpServlet{
             else
             {
                 out.println("<h3> Please check username and password.</h3>");
-                out.println("<a href=\"Login.html\">Login</a>");
+                out.println("<a href=\"login.html\">Login</a>");
             }
             con.close();
         }

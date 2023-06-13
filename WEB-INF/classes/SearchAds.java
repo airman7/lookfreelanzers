@@ -28,12 +28,10 @@ public class SearchAds extends HttpServlet{
         ResultSet rs;
         PreparedStatement ps;
         Statement stmt;
-        //SearchAds?search=&searchin=all
 
         try{
-            String search=request.getParameter("search");
             String where=request.getParameter("searchin");
-            if(where.equals("all"))
+            if(where.equals("0"))
             {
               stmt = con.createStatement();
               rs=stmt.executeQuery(query1);
@@ -41,14 +39,15 @@ public class SearchAds extends HttpServlet{
             else
             {
                 ps=con.prepareStatement(query2);
-                ps.setString(1,search);
+                ps.setInt(1,Integer.parseInt(where));
                 rs=ps.executeQuery();
             }
             if(rs.first())
             {
               do
               {
-                  out.println("<br>"+rs.getString("description")+"<br>");
+                  out.println("<br>Title:"+rs.getString("title")+"<br>");
+                  out.println("<br>Deascription:"+rs.getString("description")+"<br>");
                   out.println("<form action=\"ApplyForAd\">");
                   out.println("<input type=\"hidden\" name=\"adid\" value=\""+rs.getString("adid")+"\" />");
                   out.println("<input type=\"submit\" value=\"Apply\">");
@@ -61,8 +60,8 @@ public class SearchAds extends HttpServlet{
             }
         }catch(Exception e)
         {
-            out.println("Error fetching data. Please try again");
-        }
+            e.printStackTrace(out);
+          }
         out.println("</body></html>");
     }
 }

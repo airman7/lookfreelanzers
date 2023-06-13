@@ -66,8 +66,12 @@ public class SearchResult extends HttpServlet{
 
             while(rs.next())
             {
-              send.append("{\"name\":\""+rs.getString("rname")+"\",");
-              send.append("\"workfield\":\""+rs.getString("work field")+"\"}");
+              send.append("{\"id\":\""+rs.getString("rid")+"\",");
+              send.append("\"name\":\""+rs.getString("rname")+"\",");
+              send.append("\"workfield\":\""+rs.getString("work field")+"\",");
+              send.append("\"cont\":\""+rs.getString("rcontact")+"\",");
+              send.append("\"mail\":\""+rs.getString("email")+"\"}");
+
               if(rs.next())
               {
                 send.append(",");
