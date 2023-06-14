@@ -40,48 +40,51 @@ catch(Exception e)
 
 <!doctype html>
 <html>
-	<head>
-	        <title>Profile Page</title>
-					<link rel="stylesheet" type="text/css" href="css/pro.css"><title>Homepage</title>
+<head>
+<title>Profile Page</title>
+<link rel="stylesheet" type="text/css" href="css/pro.css">
+<title>Homepage</title>
 </head>
-	<body>
-		<center>  <fieldset style=" width:60%; display:inline-block; float:center; align-items:stretch;">
-	<div style='width:100%;'>
-	    <table style=' display:inline-block;'>
-	      <tr>
-	        <td>Name:</td>
-	        <td><%= name %></td>
-	      </tr>
-	      <tr>
-	        <td>Adress:</td>
-	        <td><%=address%></td>
-	      </tr>
-	      <tr>
-	      <td></td>
-	      <td></td>
-	      </tr>
-	        <td>Place:</td>
-	        <td><%=place%></td>
-	      </tr>
-	    </table>
-	    <table style=' display:inline-block; float:right;'>
-	      <tr>
-	        <td>Contact Number:</td>
-	        <td><%=contact%> </td>
-	      </tr>
-	      <tr>
-	        <td>Email Id:</td>
-	        <td><%=email%></td>
-	      </tr>
-	      <tr>
-	        <td>DOB:</td>
-	        <td><%=birthday%></td>
-	      </tr>
-	    </table>
-	</div >
+<body>
+	<center>
+		<fieldset
+			style="width: 60%; display: inline-block; float: center; align-items: stretch;">
+			<div style='width: 100%;'>
+				<table style='display: inline-block;'>
+					<tr>
+						<td>Name:</td>
+						<td><%= name %></td>
+					</tr>
+					<tr>
+						<td>Adress:</td>
+						<td><%=address%></td>
+					</tr>
+					<tr>
+						<td></td>
+						<td></td>
+					</tr>
+					<td>Place:</td>
+					<td><%=place%></td>
+					</tr>
+				</table>
+				<table style='display: inline-block; float: right;'>
+					<tr>
+						<td>Contact Number:</td>
+						<td><%=contact%></td>
+					</tr>
+					<tr>
+						<td>Email Id:</td>
+						<td><%=email%></td>
+					</tr>
+					<tr>
+						<td>DOB:</td>
+						<td><%=birthday%></td>
+					</tr>
+				</table>
+			</div>
 
-	<hr>
-	<div style:"text-align:left;">
+			<hr>
+			<divstyle:"text-align:left;">
 	  <div>
 	  Skillset<hr>
 	  <ul><li><li><li></ul>
@@ -104,7 +107,8 @@ catch(Exception e)
 	  <table style='width:80%;'><tr><td>Sno.</td><td>Field of certification</td><td>Certified By</td><td>Certified On</td></tr></table><br><br></div>
 	</div>
 
-	  </fieldset></center>
+	  </fieldset>
+	</center>
 
-	</body>
+</body>
 </html>

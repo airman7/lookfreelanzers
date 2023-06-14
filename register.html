@@ -1,104 +1,157 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head><link rel="shortcut icon" href="fl.ico" /><title>LookFreelanzers</title>
+<head>
+<link rel="shortcut icon" href="fl.ico" />
+<title>LookFreelanzers</title>
 <link href="css/style.css" rel="stylesheet" type="text/css" />
 <link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
 <script type="text/javascript" src="js/cufon-yui.js"></script>
-<script type="text/javascript" src="js/droid_sans_400-droid_sans_700.font.js"></script>
+<script type="text/javascript"
+	src="js/droid_sans_400-droid_sans_700.font.js"></script>
 <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
 <script type="text/javascript" src="js/script.js"></script>
 <script type="text/javascript" src="js/coin-slider.min.js"></script>
 </head>
 <body>
-<div class="main">
-  <div class="header">
-    <div class="header_resize">
-      <div class="logo">
-        <h1><a href="index.html">L<span>ook</span>Free<span>lanzers</span></a></h1>
-      </div>
-      <div class="clr"></div>
-      <div class="menu_nav">
-        <ul>
-          <li><a href="index.html"><span>Home Page</span></a></li>
-          <li><a href="about.html"><span>About Us</span></a></li>
-          <li><a href="login.html"><span>Login</span></a></li>
-          <li  class="active"><a href="register.html"><span>register</span></a></li>
-          <li><a href="contact.html"><span>Contact Us</span></a></li>
-        </ul>
-      </div>
-      <div class="clr"></div>
-      <div class="slider">
-        <div id="coin-slider"> <a href="#"><img src="images/slide1.jpg" width="960" height="360" alt="" /><span>
-          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second.</span></a> <a href="#"><img src="images/slide2.jpg" width="960" height="360" alt="" /><span>
-          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second..</span></a> <a href="#"><img src="images/slide3.jpg" width="960" height="360" alt="" /><span>
-          The LookFreelanzer helps people to hire freelance programmers, web developers, designers, writers, data entry, daily wage workers and more at a fraction of the second..</span></a> </div>
-        <div class="clr"></div>
-      </div>
-  </div>
-  <div class="content">
-    <div class="content_resize">
-      <div class="mainbar">
-        <div class="article">
-          <h2><span>Register</span></h2>
-          <div class="clr"></div>
-          <form  method='get' action='RegisterEmp' onsubmit="return checkForm(this);"><br>
-            <ol>
-        <li><label>Name</label>	<input  required type='text' name='name' maxlength="50" size="30" placeholder="enter your name"></li>
-        <li><label>Contact Number</label>			<input type='text' name="contact" maxlength="12" placeholder="entercontact number" required	size="30"></li>
-        <li><label>Address   	</label>				<input type='text' name="add" maxlength="100" required	placeholder="enter address" size="30"		 ></li>
-        <li><label>Email Address         </label>		<input  required type="email" name='email' maxlength="50" size="30"  required placeholder="username@example.com"></li>
-        <li><label>Username	     	             </label>	<input type='text' name='username' maxlength="50" size="30" placeholder="chose a username"></li>
-        <li><label>Password       	           	</label>	<input  required type='password' name='password' maxlength="50" size="30" placeholder="min. 6 characters"></li>
-        <li><label>Confirm Password	      	</label>	<input  required type='password' name='password2' maxlength="50" size="30" placeholder="re-enter the password"></li>
-        <li><label>Who are you?</label>	    	<input  required type='radio' checked name='type'  value='employer' class='rb'> Hirer  	 	<input required class='rb1' type='radio' name='type' value='resource'> Freelancer</li>
-        		<li>		<br><br>  <input value="Submit" type="submit" class="button" id="button1">		<input class="button" value="Reset!" type="reset"></li>
-          </ol>
-        </form>
-        </div>
-      </div>
-<div class="sidebar">
-  <div class="gadget">
-    <h2 class="star"><span></span> Menu</h2>
-    <div class="clr"></div>
-    <ul class="sb_menu">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="register.html">Register</a></li>
-      <li><a href="login.html">Login</a></li>
-      <li><a href="about.html">About Us</a></li>
-    </ul>
-  </div>
-</div>
-<div class="fbg">
-<div class="fbg_resize">
-<div class="col c1">
-  <h2><span>Image</span> Gallery</h2>
-   <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a> </div>
-<div class="col c2">
-  <h2><span>Services</span> Overview</h2>
+	<div class="main">
+		<div class="header">
+			<div class="header_resize">
+				<div class="logo">
+					<h1>
+						<a href="index.html">L<span>ook</span>Free<span>lanzers</span></a>
+					</h1>
+				</div>
+				<div class="clr"></div>
+				<div class="menu_nav">
+					<ul>
+						<li><a href="index.html"><span>Home Page</span></a></li>
+						<li><a href="about.html"><span>About Us</span></a></li>
+						<li><a href="login.html"><span>Login</span></a></li>
+						<li class="active"><a href="register.html"><span>register</span></a></li>
+						<li><a href="contact.html"><span>Contact Us</span></a></li>
+					</ul>
+				</div>
+				<div class="clr"></div>
+				<div class="slider">
+					<div id="coin-slider">
+						<a href="#"><img src="images/slide1.jpg" width="960"
+							height="360" alt="" /><span> The LookFreelanzer helps
+								people to hire freelance programmers, web developers, designers,
+								writers, data entry, daily wage workers and more at a fraction
+								of the second.</span></a> <a href="#"><img src="images/slide2.jpg"
+							width="960" height="360" alt="" /><span> The
+								LookFreelanzer helps people to hire freelance programmers, web
+								developers, designers, writers, data entry, daily wage workers
+								and more at a fraction of the second..</span></a> <a href="#"><img
+							src="images/slide3.jpg" width="960" height="360" alt="" /><span>
+								The LookFreelanzer helps people to hire freelance programmers,
+								web developers, designers, writers, data entry, daily wage
+								workers and more at a fraction of the second..</span></a>
+					</div>
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="content">
+				<div class="content_resize">
+					<div class="mainbar">
+						<div class="article">
+							<h2>
+								<span>Register</span>
+							</h2>
+							<div class="clr"></div>
+							<form method='get' action='RegisterEmp'
+								onsubmit="return checkForm(this);">
+								<br>
+								<ol>
+									<li><label>Name</label> <input required type='text'
+										name='name' maxlength="50" size="30"
+										placeholder="enter your name"></li>
+									<li><label>Contact Number</label> <input type='text'
+										name="contact" maxlength="12"
+										placeholder="entercontact number" required size="30"></li>
+									<li><label>Address </label> <input type='text' name="add"
+										maxlength="100" required placeholder="enter address" size="30"></li>
+									<li><label>Email Address </label> <input required
+										type="email" name='email' maxlength="50" size="30" required
+										placeholder="username@example.com"></li>
+									<li><label>Username </label> <input type='text'
+										name='username' maxlength="50" size="30"
+										placeholder="chose a username"></li>
+									<li><label>Password </label> <input required
+										type='password' name='password' maxlength="50" size="30"
+										placeholder="min. 6 characters"></li>
+									<li><label>Confirm Password </label> <input required
+										type='password' name='password2' maxlength="50" size="30"
+										placeholder="re-enter the password"></li>
+									<li><label>Who are you?</label> <input required
+										type='radio' checked name='type' value='employer' class='rb'>
+										Hirer <input required class='rb1' type='radio' name='type'
+										value='resource'> Freelancer</li>
+									<li><br>
+									<br> <input value="Submit" type="submit" class="button"
+										id="button1"> <input class="button" value="Reset!"
+										type="reset"></li>
+								</ol>
+							</form>
+						</div>
+					</div>
+					<div class="sidebar">
+						<div class="gadget">
+							<h2 class="star">
+								<span></span> Menu
+							</h2>
+							<div class="clr"></div>
+							<ul class="sb_menu">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="register.html">Register</a></li>
+								<li><a href="login.html">Login</a></li>
+								<li><a href="about.html">About Us</a></li>
+							</ul>
+						</div>
+					</div>
+					<div class="fbg">
+						<div class="fbg_resize">
+							<div class="col c1">
+								<h2>
+									<span>Image</span> Gallery
+								</h2>
+								<a href="#"><img src="images/gal4.jpg" width="75"
+									height="75" alt="" class="gal" /></a> <a href="#"><img
+									src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a>
+								<a href="#"><img src="images/gal6.jpg" width="75"
+									height="75" alt="" class="gal" /></a>
+							</div>
+							<div class="col c2">
+								<h2>
+									<span>Services</span> Overview
+								</h2>
 
-  <ul class="fbg_ul">
-    <li><a href="#">Search for Freelancers</a></li>
-    <li><a href="#">Register as Freelancer</a></li>
-    <li><a href="#">Post Ads</a></li>
-  </ul>
-</div>
-<div class="col c3">
-  <h2><span>Contact</span> Us</h2>
-  <p class="contact_info"> <span>Address:</span> LookFreelanzers, India<br />
-    <span>Telephone:</span> +123-1234-5678<br />
-    <br />
-    <span>Others:</span>+91-9898955555<br />
-    <span>E-mail:</span> <a href="#">mail@lookfreelanzers.com</a> </p>
-</div>
-<div class="clr"></div>
-</div>
-</div>
-<div class="footer">
-<div class="footer_resize">
-<p class="lf">&copy; Copyright <a href="#">LookFreelanzers</a>.</p>
-<div style="clear:both;"></div>
-</div>
-</div>
-</div>
-
+								<ul class="fbg_ul">
+									<li><a href="#">Search for Freelancers</a></li>
+									<li><a href="#">Register as Freelancer</a></li>
+									<li><a href="#">Post Ads</a></li>
+								</ul>
+							</div>
+							<div class="col c3">
+								<h2>
+									<span>Contact</span> Us
+								</h2>
+								<p class="contact_info">
+									<span>Address:</span> LookFreelanzers, India<br /> <span>Telephone:</span>
+									+123-1234-5678<br /> <br /> <span>Others:</span>+91-9898955555<br />
+									<span>E-mail:</span> <a href="#">mail@lookfreelanzers.com</a>
+								</p>
+							</div>
+							<div class="clr"></div>
+						</div>
+					</div>
+					<div class="footer">
+						<div class="footer_resize">
+							<p class="lf">
+								&copy; Copyright <a href="#">LookFreelanzers</a>.
+							</p>
+							<div style="clear: both;"></div>
+						</div>
+					</div>
+				</div>
 </html>
