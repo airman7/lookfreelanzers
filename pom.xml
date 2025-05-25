@@ -25,25 +25,20 @@
         </dependency>
     </dependencies>
     <build>
-        <!-- <finalName>LookFreelanzersV4</finalName> -->
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>1.8</source>
-                    <target>1.8</target>
+                    <source>17</source>
+                    <target>17</target>
                 </configuration>
             </plugin>
-            <!-- <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <version>3.2.2</version>
-            </plugin> -->
+            <!-- this plugin worked on my macbook as it was fetching the tomcat8 plugin from cobalt repo, but this jar is not available in the maven central repo -->
             <plugin>
                 <groupId>org.apache.tomcat.maven</groupId>
-                <artifactId>tomcat7-maven-plugin</artifactId>
-                <version>2.2</version>
+                <artifactId>tomcat8-maven-plugin</artifactId>
+                <version>3.0-r1756463</version>
                 <executions>
                     <execution>
                         <id>tomcat-run</id>
@@ -53,9 +48,6 @@
                         <phase>package</phase>
                         <configuration>
                             <path>/LookFreelanzers</path>
-                            <!-- <enableNaming>false</enableNaming>
-                            <finalName>${project.build.finalName}</finalName>
-                            <charset>utf-8</charset> -->
                         </configuration>
                     </execution>
                 </executions>
