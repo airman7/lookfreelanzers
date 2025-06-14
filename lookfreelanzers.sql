@@ -68,7 +68,7 @@ CREATE TABLE `applied_ads` (
 
 LOCK TABLES `applied_ads` WRITE;
 /*!40000 ALTER TABLE `applied_ads` DISABLE KEYS */;
-INSERT INTO `applied_ads` VALUES (1,1,1),(2,1,1),(1,1,2),(1,1,3),(3,1,1),(4,1,1),(5,1,1),(4,1,1),(1,1,1),(6,1,1),(1,1,1);
+INSERT INTO `applied_ads` VALUES (1,1,1),(2,1,1),(1,1,2),(1,1,3),(3,1,1),(4,1,1),(5,1,1),(4,1,1),(6,1,1);
 /*!40000 ALTER TABLE `applied_ads` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +111,7 @@ CREATE TABLE `employer` (
   `contact` varchar(12) DEFAULT NULL,
   `address` varchar(100) DEFAULT NULL,
   `username` varchar(20) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
+  `password` varchar(50) DEFAULT NULL,
   `email` varchar(20) DEFAULT NULL,
   `description` varchar(2000) DEFAULT NULL,
   PRIMARY KEY (`eid`)
@@ -124,70 +124,8 @@ CREATE TABLE `employer` (
 
 LOCK TABLES `employer` WRITE;
 /*!40000 ALTER TABLE `employer` DISABLE KEYS */;
-INSERT INTO `employer` VALUES (1,'ayushi vijayvargi','8889','58,Brijeshwari','ayu','1234','aweesome','ayu.2050@gmaail.com'),(2,'BJ Films','7869681506','Kandhivali,Mumbai','bjfilms','bjfilms','bjfilms@gmail.com',NULL),(3,'Rajaram','7869681986','Indore,India','hareram','hareram','rajaram@gmail.com',NULL),(4,'Humserve Solutions','7869681901','Bhopal','humserve','humserve','humsserve@gmail.com',NULL),(5,'Humserve Solutions','7869681901','Bhopal','humserve','humserve','humsserve@gmail.com',NULL),(6,'wewew','54334','erwe','maya','maya','m@gmail.com',NULL),(7,'Nakulesh','8989895544','brijeshwari','nakul','nakul123','nakul@gmail.com',NULL),(8,'Megha Agrawal','9893314294','kalani nagar','megha','agrawal','megha@gmail.com',NULL);
+INSERT INTO `employer` VALUES (1,'Ayushi Vijayvargiya','8889956456','58,Brijeshwari','ayu','1234567','ayu.2050@gmail.com','Need a carpenter'),(2,'BJ Films','7869681506','Kandhivali,Mumbai','bjfilms','bjfilms','bjfilms@gmail.com','Need actors'),(3,'Rajaram','7869681986','Indore,India','hareram','hareram','rajaram@gmail.com','Need programmer'),(4,'Humserve Solutions','7869681901','Bhopal','humserve','humserve','humsserve@gmail.com','Need a marketing staff'),(5,'Parth Jain','7895658964','87,Pricanco Colony','Parth','jain456','parth.jain@gmail.com','need a cook urgently'),(6,'Kinsage Education','9827012345','Palasia,Indore','Kinsage','Kingsman','info@kinsage.com','Hiring computer and foreign language experts'),(7,'Mukta Infotech','8287012345','Puna','MuktaInfo','Crystal125','mukta@crystalpuna.co','Summer Internships Offered for Engineers'),(8,'ZICA Institute','9985012345','Noida','ZICA','Z_creative','design@zica.com','Photoshop trainers and Excellent designing trainers'),(9,'Suyash Shrivastav','8265312345','Bangalore','Su','Sushrivas','su.shrivastav@gmail.','Need a driver'),(10,'Lions Club','9893365412','Gwalior','LClub','Lion','info.lclub@gmail.com','Need a hall for an event every month.Anybody with luxurious farm house or anything of that sort leave a mail.'),(11,'Chandra Kumar Jain','9827085642','265,Aerodrum road,Indore','ckjain','akhil','jain.ck@gmail.com','need a personal assistant for a civil engineer'),(12,'Allen Career Institute','9827056942','65,park road,Kota','Allen','we_are_the_best','info@allen.com','hiring teachers and management staff for new centres across the country'),(13,'Raj Motwani','9827256942','6 Bungalows,Hyderabad','Raj','cricket_forever','rmotwani@gmail.com','a personal trainer and coach for cricket needed.'),(14,'Apollo Hospitals','9827212342','Bypass Indore','Apollo','mission','indore@apollo.com','hiring well informed and trained personnels for all sorts of hospital staff'),(15,'Radisson Blue','9427215642','Bangalore','RadBanglore','Blu','indore@blu.com','vacancy for the post of management staff and gardener'),(16,'Radio Mirchi','8982215642','Mumbai','Mirchi','ItsHot','mumbai@mirchi.com','Hiring Rjs'),(17,'PVR Cinemas','8982656789','Ujjain','PVRujjain','jaimahankal','ujjain@pvr.com','specialists and engineers apply for jobs pertaining to reel application and projector handling'),(18,'Maruti Suzuki','8889445612','Jabalpur','Suzuki','go for suzuki','amit@maruti.co.in','customer care and enquiry officer posts are vacant for application'),(19,'Barbarian Gym','8459445612','Indore','Barbarian','health=wealth','indore@barbarian.com','Aerobics and Zumba trainer required'),(20,'Prachi Agrawal','9899445612','Delhi','Prachi','LondonDreams','prachi@gmail.com','Computer expert needed for repairing jobs');
 /*!40000 ALTER TABLE `employer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `freelancer`
---
-
-DROP TABLE IF EXISTS `freelancer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `freelancer` (
-  `rid` int(5) NOT NULL AUTO_INCREMENT,
-  `rname` varchar(50) DEFAULT NULL,
-  `rcontact` varchar(12) DEFAULT NULL,
-  `raddress` varchar(100) DEFAULT NULL,
-  `username` varchar(20) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  `DOB` date DEFAULT NULL,
-  `city` varchar(20) DEFAULT NULL,
-  `work field` varchar(30) DEFAULT NULL,
-  `email` varchar(20) DEFAULT NULL,
-  PRIMARY KEY (`rid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `freelancer`
---
-
-LOCK TABLES `freelancer` WRITE;
-/*!40000 ALTER TABLE `freelancer` DISABLE KEYS */;
-INSERT INTO `freelancer` VALUES (1,'Mayank Vijayvargiya','9893152964','bilavali','mayank7','mayank7','1995-12-14','indore','Programmer','mayank@gmail.com'),(2,'Krutika Joshi','9575760930','shalimar','groot','groot','1995-07-14','indore','Cook','krutika@gmail.com'),(3,'Megha Agrawal','9893314294','Aerodrum road','megha','mugs','1995-09-13','indore','Radio Jockey','megha@gmail.com'),(4,'Suresh Kala','9827314294','kila maidan','Suresh','suresh bhai','1987-05-15','khandwa','gardener',NULL),(5,'Rajesh Patel','9826544294','Lokmanya nagar','Patol Babu','kalakepremi','1980-11-19','Mhow','Actor','kalakaar@gmail.com'),(6,'Ritik Goswami','7879883367','Kolar road','ritik','7879','1985-06-17','Bhopal','Driver',NULL),(7,'Ram Singh','9899883367','Bhanwar Kuan','Ram','ram3367','1978-07-12','Indore','Carpenter',NULL),(8,'Anuj Mehta','9894563367','M.G. Road','Anuj','ahem264','1993-01-16','Pune','Marketing Associate','anuj@gmail.com'),(9,'Rahul Agrawal','7760267456','64,Maulana Road','Rahul','rahuliit27','1992-08-12','Hyderabad','Software Engineer','rahul@gmail.com'),(10,'Divyansh Sharma','7760569456','sector 74','Divyansh','5678','1988-02-12','Gwalior','Property dealer','divyansh@gmail.com'),(11,'Kavita Diwan','7898561236','Dhamtari Road','Kavita','Diwank','1996-05-14','Raipur','Animation Designer','diwan@gmail.com'),(12,'Kabir Thapar','9856412345','Udyog Bhavan ','Kabira','Bunny','1992-06-25','Gujarat','Hospitality Manager','diwan@gmail.com'),(13,'Dr. Suneel Malpani','7760278945','Basant vihar ','Suneel','Ethereal','1970-03-21','Indore','Dermatologist','suneel@gmail.com'),(14,'Sagar Kukreja','8564532894','Daulatganj ','Sunny','jai mahankal','1995-09-15','Ujjain','Electronics Engineer','sagar@gmail.com'),(15,'Anita Gupta','9425014956','Shankar Bagh ','Anita','vinita','1990-06-28','Bhopal','Fitness Expert','anita@gmail.com'),(16,'Arjun Kapoor','7756289564','Kandoli ','Arjun','gantavya','1988-07-16','Dehradun','Radio Jockey','arjun@gmail.com'),(17,'Aman Gupta','9893614296','Kora Mangala','Aman','ak47','1995-08-12','Bengaluru','Dancer','aman@gmail.com'),(18,'Reena Dsouza','8889945612','Gomti Nagar ','Reena','blessall','1989-04-18','Lucknow','Nurse','reena@gmail.com'),(19,'Mohit Akhtar','926033656','Dehmi Kalan','Mohit','chouhan','1994-12-31','Jaipur','Pathologist','mohit@gmail.com'),(20,'Malini Gandhi','7777865234','Nepean Sea Road','Malini','Gandhi','1987-10-09','Bombay','Website Designer','malini@gmail.com');
-/*!40000 ALTER TABLE `freelancer` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `hirer`
---
-
-DROP TABLE IF EXISTS `hirer`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `hirer` (
-  `eid` int(5) NOT NULL AUTO_INCREMENT,
-  `ename` varchar(50) DEFAULT NULL,
-  `contact` varchar(12) DEFAULT NULL,
-  `address` varchar(100) DEFAULT NULL,
-  `username` varchar(20) DEFAULT NULL,
-  `password` varchar(20) DEFAULT NULL,
-  `email` varchar(20) DEFAULT NULL,
-  `description` varchar(2000) DEFAULT NULL,
-  PRIMARY KEY (`eid`)
-) ENGINE=InnoDB AUTO_INCREMENT=21 DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `hirer`
---
-
-LOCK TABLES `hirer` WRITE;
-/*!40000 ALTER TABLE `hirer` DISABLE KEYS */;
-INSERT INTO `hirer` VALUES (1,'Ayushi Vijayvargiya','8889956456','58,Brijeshwari','ayu','1234567','ayu.2050@gmail.com','Need a carpenter'),(2,'BJ Films','7869681506','Kandhivali,Mumbai','bjfilms','bjfilms','bjfilms@gmail.com','Need actors'),(3,'Rajaram','7869681986','Indore,India','hareram','hareram','rajaram@gmail.com','Need programmer'),(4,'Humserve Solutions','7869681901','Bhopal','humserve','humserve','humsserve@gmail.com','Need a marketing staff'),(5,'Parth Jain','7895658964','87,Pricanco Colony','Parth','jain456','parth.jain@gmail.com','need a cook urgently'),(6,'Kinsage Education','9827012345','Palasia,Indore','Kinsage','Kingsman','info@kinsage.com','Hiring computer and foreign language experts'),(7,'Mukta Infotech','8287012345','Puna','MuktaInfo','Crystal125','mukta@crystalpuna.co','Summer Internships Offered for Engineers'),(8,'ZICA Institute','9985012345','Noida','ZICA','Z_creative','design@zica.com','Photoshop trainers and Excellent designing trainers'),(9,'Suyash Shrivastav','8265312345','Bangalore','Su','Sushrivas','su.shrivastav@gmail.','Need a driver'),(10,'Lions Club','9893365412','Gwalior','LClub','Lion','info.lclub@gmail.com','Need a hall for an event every month.Anybody with luxurious farm house or anything of that sort leave a mail.'),(11,'Chandra Kumar Jain','9827085642','265,Aerodrum road,Indore','ckjain','akhil','jain.ck@gmail.com','need a personal assistant for a civil engineer'),(12,'Allen Career Institute','9827056942','65,park road,Kota','Allen','we_are_the_best','info@allen.com','hiring teachers and management staff for new centres across the country'),(13,'Raj Motwani','9827256942','6 Bungalows,Hyderabad','Raj','cricket_forever','rmotwani@gmail.com','a personal trainer and coach for cricket needed.'),(14,'Apollo Hospitals','9827212342','Bypass Indore','Apollo','mission','indore@apollo.com','hiring well informed and trained personnels for all sorts of hospital staff'),(15,'Radisson Blue','9427215642','Bangalore','RadBanglore','Blu','indore@blu.com','vacancy for the post of management staff and gardener'),(16,'Radio Mirchi','8982215642','Mumbai','Mirchi','ItsHot','mumbai@mirchi.com','Hiring Rjs'),(17,'PVR Cinemas','8982656789','Ujjain','PVRujjain','jaimahankal','ujjain@pvr.com','specialists and engineers apply for jobs pertaining to reel application and projector handling'),(18,'Maruti Suzuki','8889445612','Jabalpur','Suzuki','go for suzuki','amit@maruti.co.in','customer care and enquiry officer posts are vacant for application'),(19,'Barbarian Gym','8459445612','Indore','Barbarian','health=wealth','indore@barbarian.com','Aerobics and Zumba trainer required'),(20,'Prachi Agrawal','9899445612','Delhi','Prachi','LondonDreams','prachi@gmail.com','Computer expert needed for repairing jobs');
-/*!40000 ALTER TABLE `hirer` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -207,7 +145,7 @@ CREATE TABLE `resource` (
   `DOB` date DEFAULT NULL,
   `city` varchar(20) DEFAULT NULL,
   `work field` varchar(30) DEFAULT NULL,
-  `email` varchar(20) DEFAULT NULL,
+  `email` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`rid`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -218,7 +156,7 @@ CREATE TABLE `resource` (
 
 LOCK TABLES `resource` WRITE;
 /*!40000 ALTER TABLE `resource` DISABLE KEYS */;
-INSERT INTO `resource` VALUES (1,'Mayank','9893152964','bilavali','mayank7','mayank7','1995-12-14','indore','Programmer','mayank@gmail.com'),(2,'Krutika','9575760930','shalimar','groot','groot','1995-07-14','indore','Cook','krutika@gmail.com'),(3,'mustu','9897969594','navlakha','mustu','mustu','1995-01-12','indore','Programmer','mustafa@gmail.com'),(4,'Mayank Vijayvargiya','8989895544','58,Brijeshwari Extension,Pipliahana','mayank','mayank',NULL,NULL,NULL,'mayank7@gmail.com'),(5,'krutika','9876543210','paris','krutika14','krutika14',NULL,NULL,NULL,'krutika@sgsits.com');
+INSERT INTO `resource` VALUES (1,'Mayank Vijayvargiya','9893152964','bilavali','mayank7','mayank7','1995-12-14','indore','Programmer','mayank@gmail.com'),(2,'Krutika Joshi','9575760930','shalimar','groot','groot','1995-07-14','indore','Cook','krutika@gmail.com'),(3,'Megha Agrawal','9893314294','Aerodrum road','megha','mugs','1995-09-13','indore','Radio Jockey','megha@gmail.com'),(4,'Suresh Kala','9827314294','kila maidan','Suresh','suresh bhai','1987-05-15','khandwa','gardener',NULL),(5,'Rajesh Patel','9826544294','Lokmanya nagar','Patol Babu','kalakepremi','1980-11-19','Mhow','Actor','kalakaar@gmail.com'),(6,'Ritik Goswami','7879883367','Kolar road','ritik','7879','1985-06-17','Bhopal','Driver',NULL),(7,'Ram Singh','9899883367','Bhanwar Kuan','Ram','ram3367','1978-07-12','Indore','Carpenter',NULL),(8,'Anuj Mehta','9894563367','M.G. Road','Anuj','ahem264','1993-01-16','Pune','Marketing Associate','anuj@gmail.com'),(9,'Rahul Agrawal','7760267456','64,Maulana Road','Rahul','rahuliit27','1992-08-12','Hyderabad','Software Engineer','rahul@gmail.com'),(10,'Divyansh Sharma','7760569456','sector 74','Divyansh','5678','1988-02-12','Gwalior','Property dealer','divyansh@gmail.com'),(11,'Kavita Diwan','7898561236','Dhamtari Road','Kavita','Diwank','1996-05-14','Raipur','Animation Designer','diwan@gmail.com'),(12,'Kabir Thapar','9856412345','Udyog Bhavan ','Kabira','Bunny','1992-06-25','Gujarat','Hospitality Manager','diwan@gmail.com'),(13,'Dr. Suneel Malpani','7760278945','Basant vihar ','Suneel','Ethereal','1970-03-21','Indore','Dermatologist','suneel@gmail.com'),(14,'Sagar Kukreja','8564532894','Daulatganj ','Sunny','jai mahankal','1995-09-15','Ujjain','Electronics Engineer','sagar@gmail.com'),(15,'Anita Gupta','9425014956','Shankar Bagh ','Anita','vinita','1990-06-28','Bhopal','Fitness Expert','anita@gmail.com'),(16,'Arjun Kapoor','7756289564','Kandoli ','Arjun','gantavya','1988-07-16','Dehradun','Radio Jockey','arjun@gmail.com'),(17,'Aman Gupta','9893614296','Kora Mangala','Aman','ak47','1995-08-12','Bengaluru','Dancer','aman@gmail.com'),(18,'Reena Dsouza','8889945612','Gomti Nagar ','Reena','blessall','1989-04-18','Lucknow','Nurse','reena@gmail.com'),(19,'Mohit Akhtar','926033656','Dehmi Kalan','Mohit','chouhan','1994-12-31','Jaipur','Pathologist','mohit@gmail.com'),(20,'Malini Gandhi','7777865234','Nepean Sea Road','Malini','Gandhi','1987-10-09','Bombay','Website Designer','malini@gmail.com');
 /*!40000 ALTER TABLE `resource` ENABLE KEYS */;
 UNLOCK TABLES;
 
