@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <groupId>com.mayank</groupId>
-    <artifactId>LookFreelanzers</artifactId>
+    <artifactId>lookfreelanzers</artifactId>
     <version>4.0</version>
     <modelVersion>4.0.0</modelVersion>
     <packaging>war</packaging>
@@ -46,7 +46,7 @@
                         </goals>
                         <phase>package</phase>
                         <configuration>
-                            <path>/LookFreelanzers</path>
+                            <path>/lookfreelanzers</path>
                         </configuration>
                     </execution>
                 </executions>

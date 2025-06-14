@@ -35,25 +35,25 @@ public class SearchResult extends HttpServlet{
 
             if(search.equals("") && where.equals("No Particular Field"))
             {
-              ps  = con.prepareStatement(query3);
+              ps  = con.prepareStatement(query3, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             }
             else
             {
               if(where.equals("No Particular Field"))
               {
-                  ps = con.prepareStatement(query1);
+                  ps = con.prepareStatement(query1,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
                   ps.setString(1,search);
               }
               else
               {
                 if(search.equals(""))
                 {
-                    ps=con.prepareStatement(query);
+                    ps=con.prepareStatement(query,ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
                     ps.setString(1,where);
                 }
                 else
                 {
-                    ps=con.prepareStatement(query2);
+                    ps=con.prepareStatement(query2, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
                     ps.setString(1,search);
                     ps.setString(2,where);
                 }

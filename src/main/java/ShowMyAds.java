@@ -21,7 +21,8 @@ public class ShowMyAds extends HttpServlet{
         PrintWriter out = response.getWriter();
 
         Connection con = Conn.getCon();
-        String get="select *,count(adid) from applied_ads where eid=? group by adid";
+        //cant do select * now as "group by" allows column that are part of select clause only
+        String get="select adid, count(adid) from applied_ads where eid=? group by adid";
         String getad="select * from ad where adid=?";
         String field = "select name from `work fields` where id=?";
         //String getdata="select * from resource where rid=?";
@@ -35,7 +36,7 @@ public class ShowMyAds extends HttpServlet{
           HttpSession session=request.getSession();
           String id= (String) session.getAttribute("eid");
 
-          ps=con.prepareStatement(get);
+          ps=con.prepareStatement(get, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
           ps.setInt(1,Integer.parseInt(id));
           rs=ps.executeQuery();
           while(rs.next())
@@ -63,7 +64,7 @@ public class ShowMyAds extends HttpServlet{
               ps3=con.prepareStatement(field);
               ps3.setInt(1,Integer.parseInt(rs2.getString("field")));
               rs3=ps3.executeQuery();
-              rs3.first();
+              rs3.next();
               send.append("{\"adid\":\""+rs2.getString("adid")+"\",");
               send.append("\"title\":\""+rs2.getString("title")+"\",");
               send.append("\"field\":\""+rs3.getString("name")+"\",");

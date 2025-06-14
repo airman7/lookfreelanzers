@@ -31,13 +31,13 @@ public class ShowPeople extends HttpServlet{
 
             int id= Integer.parseInt(request.getParameter("adid"));
 
-            ps=con.prepareStatement(get);
+            ps=con.prepareStatement(get, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
             ps.setInt(1,id);
             rs=ps.executeQuery();
             send = new StringBuffer("{\"applyer\":[");
             while(rs.next())
             {
-              ps2=con.prepareStatement(getr);
+              ps2=con.prepareStatement(getr, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
               ps2.setInt(1,Integer.parseInt(rs.getString("rid")));
               rs2=ps2.executeQuery();
               rs2.first();

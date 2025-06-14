@@ -13,7 +13,7 @@
   int id[]={};
   String field[]={};
   try{
-      stmt=con.createStatement();
+      stmt=con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
       rs= stmt.executeQuery(query);
       while (rs.next())
         ++count;

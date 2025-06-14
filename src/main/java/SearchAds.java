@@ -42,7 +42,7 @@ public class SearchAds extends HttpServlet{
                 ps.setInt(1,Integer.parseInt(where));
                 rs=ps.executeQuery();
             }
-            if(rs.first())
+            if(rs.next())
             {
               do
               {

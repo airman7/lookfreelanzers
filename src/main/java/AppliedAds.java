@@ -33,20 +33,18 @@ public class AppliedAds extends HttpServlet{
           HttpSession session=request.getSession();
           String id= (String) session.getAttribute("rid");
 
-            ps=con.prepareStatement(getr);
-            ps2=con.prepareStatement(getname);
-            ps2.setInt(1,Integer.parseInt(id));
-            rs=ps2.executeQuery();
-            rs.first();
-            name=rs.getString("ename");
-              ps=con.prepareStatement(getr);
-              ps2=con.prepareStatement(getname2);
-              ps2.setInt(1,Integer.parseInt(id));
-              rs=ps2.executeQuery();
-              rs.first();
-              name=rs.getString("rname");
+          ps2=con.prepareStatement(getname);
+          ps2.setInt(1,Integer.parseInt(id));
+          rs=ps2.executeQuery();
+          rs.next();
+          name=rs.getString("ename"); //this name is not even used anywhere
+          ps2=con.prepareStatement(getname2);
+          ps2.setInt(1,Integer.parseInt(id));
+          rs=ps2.executeQuery();
+          rs.next();
+          name=rs.getString("rname");
 
-
+          ps=con.prepareStatement(getr, ResultSet.TYPE_SCROLL_SENSITIVE, ResultSet.CONCUR_READ_ONLY);
           ps.setInt(1,Integer.parseInt(id));
           rs=ps.executeQuery();
 
